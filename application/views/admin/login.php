@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sistema de ventas</title> 
+    <title>Sistema CONFCAMILA</title> 
   </head>
   <body>
     <div class="col-md-4">
