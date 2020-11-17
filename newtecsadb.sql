@@ -13,8 +13,8 @@
 
 
 -- Volcando estructura de base de datos para tecsadb
-CREATE DATABASE IF NOT EXISTS `tecsadb` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `tecsadb`;
+CREATE DATABASE IF NOT EXISTS `confcamila` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `confcamila`;
 
 -- Volcando estructura para tabla tecsadb.bitacora_producto
 CREATE TABLE IF NOT EXISTS `bitacora_producto` (
