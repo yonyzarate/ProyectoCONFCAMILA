@@ -9,7 +9,7 @@ class Permisos_controller extends CI_Controller {
         $this->load->model("permisos_model");
         $this->load->model("roles_model");
         
-    }
+    } 
     /// controlador para llamar el listado de modelo para mostrar en la vista 
 	public function index(){
 		$data  = array(

@@ -79,7 +79,7 @@
                             <ul class="dropdown-menu"> 
                                 <li class="user-body">
                                     <div class="row">
-                                        <div class="col-xs-12 text-center">
+                                        <div class="col-sm-12 text-center">
                                             <a href="<?php echo base_url(); ?>auth/logout"> Cerrar Sesión</a>
                                         </div>
                                     </div>

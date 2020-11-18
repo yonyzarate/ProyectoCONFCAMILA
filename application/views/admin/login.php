@@ -16,7 +16,7 @@
       
       <h1>Sistema de ventas</h1>
         <?php if($this->session->flashdata("error")):?>
-                  <div>
+                  <div class="alert alert-danger">
                     <p><?php echo $this->session->flashdata("error") ?></p>
                   </div>
                 
