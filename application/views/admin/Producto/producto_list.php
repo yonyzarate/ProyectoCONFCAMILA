@@ -6,7 +6,7 @@
           Producto
           <small>Listado</small>
       </h1>
-    </div>
+    </div> 
     <div class="card-body login-card-body " >
     <section class="content">
         <div class="box box-solid">

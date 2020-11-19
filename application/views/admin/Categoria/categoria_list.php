@@ -40,10 +40,10 @@
                                                   
                                                     <!--<a href="#" class="btn btn-info"><span class="fa fa-eye"></span></a>-->
                                                     <?php if($permisos->Actualizar==1):?>
-                                                    <a href="<?php echo base_url();?>Mantenimiento/Marca/edit/<?php echo $categoria->IdCategoria;?>" class="btn btn-warning"><span class="fas fa-pencil-alt"></span>Editar</a>
+                                                    <a href="<?php echo base_url();?>Mantenimiento/Categoria_controller/edit/<?php echo $categoria->IdCategoria;?>" class="btn btn-warning"><span class="fas fa-pencil-alt"></span>Editar</a>
                                                     <?php endif;?>
                                                     <?php if($permisos->Eliminar==1):?>
-                                                    <a href="<?php echo base_url();?>Mantenimiento/Marca/delete/<?php echo $categoria->IdCategoria;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span>Eliminar</a>
+                                                    <a href="<?php echo base_url();?>Mantenimiento/Categoria_controller/delete/<?php echo $categoria->IdCategoria;?>" class="btn btn-danger btn-remove"><span class="fa fa-trash-alt"></span>Eliminar</a>
                                                     <?php endif;?>
                                                 </div>
                                             </td>

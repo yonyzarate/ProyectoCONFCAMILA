@@ -7,7 +7,7 @@ class usuarios_model extends CI_Model {
         parent::__construct();
 
  	}
- 
+  
 //consulta para verificar si el ususario logueado existe en la base de datos 
 	public function login ( $nombreusuario, $contrasena)
 	{
