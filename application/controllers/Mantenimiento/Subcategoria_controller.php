@@ -37,4 +37,40 @@ class Subcategoria_controller extends CI_Controller {
         $this->load->view('layouts/footer');
 		
     }
+     // Controlador que recoge datos de las consultas de model para insert un nuevo 
+    public function store(){
+       
+        $nombresub = $this->input->post("nombresub");
+        $categoria = $this->input->post("categoria");
+        
+        $config = array(
+            array(
+                'field' => 'nombresub',
+                'label' => 'nombre de subcategoria',
+                'rules' => 'required|is_unique[subcategoria.Nombre]',
+                'errors' => array(
+                    'required' => 'el %s es importante',
+                    'is_unique' => 'el %s ya existe',
+                ),
+            ),
+           
+        );
+        $this->form_validation->set_rules($config);
+		if ($this->form_validation->run()) {
+		    $data = array(
+
+                'Nombre' => $nombresub,
+                'IdCategoria'=>$categoria,
+		    );
+		    if($this->subcategoria_model->save($data)){
+		    	redirect(base_url()."Mantenimiento/Subcategoria_controller");
+		    }
+		    else {
+		    	$this->session->set_flashdata("Error","No se pudo guardar la información");
+		    	redirect(base_url()."Mantenimiento/Subcategoria_controller/add");
+            }
+        }else{
+            $this->add();
+        }
+    }
 }

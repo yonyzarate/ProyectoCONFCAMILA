@@ -56,7 +56,7 @@
                                                 
                         
                                 <div class="form-group">
-                                   <button type="submit" class="btn btn-success btn-flat">Guardar</button>
+                                   <button type="submit" class="btn btn-success btn-flat rb-5">Guardar</button>
                                 </div>
                             </form>
                         </div>

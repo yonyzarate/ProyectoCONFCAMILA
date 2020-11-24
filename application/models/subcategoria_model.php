@@ -7,12 +7,17 @@ class subcategoria_model extends CI_Model {
         parent::__construct();
 
     }
+    // consulta para listar los registros en una vista 
     public function getsubcategoria(){
         $this->db->select("sub.*, cat.Nombre AS Categoria ");
         $this->db->from("subcategoria sub");
         $this->db->join("categoria cat","cat.IdCategoria=sub.IdCategoria");
-        $resultado = $this->db->get("subcategoria");
+        $resultado = $this->db->get();
         return $resultado->result();
+    }
+    // consulta que inserta a la base datos el nuevo
+    public function save($data){
+        return $this->db->insert("subcategoria",$data);
     }
 
 }
