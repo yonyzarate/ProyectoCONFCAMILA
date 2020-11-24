@@ -26,7 +26,7 @@ class Marca extends CI_Controller {
 		
 	}
 	
-// controlador para editar marca
+// controlador para agregar una nueva 
 	public function add()
 	{
 		

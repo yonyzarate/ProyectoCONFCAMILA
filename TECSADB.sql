@@ -240,3 +240,14 @@ CREATE TABLE Bitacora_Producto (
     Estado_Nuevo enum('Activo','Inactivo') NULL,
     Estado_Viejo enum('Activo','Inactivo') NULL,
 )ENGINE=INNODB DEFAULT CHARSET=Latin1;
+CREATE TABLE Categoria (
+    IdCategoria INTEGER AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL
+)ENGINE=INNODB DEFAULT CHARSET=Latin1;
+
+CREATE TABLE SubCategoria (
+    IdSubcategoria INTEGER AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    IdCategoria INT (11) NOT NULL,
+    CONSTRAINT FK_Personal_Categoria FOREIGN KEY (IdCategoria) REFERENCES Categoria (IdCategoria)
+)ENGINE=INNODB DEFAULT CHARSET=Latin1;

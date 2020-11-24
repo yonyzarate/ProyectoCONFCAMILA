@@ -24,7 +24,7 @@ class Usuario_controller extends CI_Controller {
         $this->load->view('admin/Usuario/usuario_list',$data);
         $this->load->view('layouts/footer');
     }
-    // controlador  que me manda a la vista  nuevo  
+    // controlador  que me manda a la vista  nuevo   
 	public function add()
 	{
         $data = array(
