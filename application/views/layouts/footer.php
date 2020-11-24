@@ -360,7 +360,7 @@ var base_url= "<?php echo base_url();?>";
       var ruta = $(this).attr("href");
       swal ({ 
           title: "¿Está seguro?", 
-          text: "¡No podrá recuperar este archivo imaginario!", 
+          text: "¡No podrá recuperar este registro!", 
           type: "warning", 
           showCancelButton: true, 
           confirmButtonColor: '#d9534f',

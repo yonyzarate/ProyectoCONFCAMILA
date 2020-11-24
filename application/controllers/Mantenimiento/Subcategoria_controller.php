@@ -73,4 +73,65 @@ class Subcategoria_controller extends CI_Controller {
             $this->add();
         }
     }
+    // Controlador que trae los datos de la lista para poder editar y me manda los resultados a la vista editar 
+    public function edit($IdSubcategoria){
+		$data = array(
+            'categoria' =>$this->categoria_model->getcategoria(),
+            'subcategoria'=>$this->subcategoria_model->new_subcategoria($IdSubcategoria)
+		);
+		$this->load->view('layouts/header');
+        $this->load->view('layouts/aside');
+        $this->load->view('admin/Subcategoria/subcategoria_edit_view',$data);
+        $this->load->view('layouts/footer');
+    }
+    public function update(){
+        $IdSubcategoria=$this->input->post("IdSubcategoria");
+        $nombresub = $this->input->post("nombresub");
+        $categoria = $this->input->post("categoria");
+
+        $SubcategoriaActual = $this->subcategoria_model->new_subcategoria($IdSubcategoria);
+        if ($nombresub == $SubcategoriaActual->Nombre) {
+			$uniquenom='';
+		}
+		else{
+			$uniquenom ='|is_unique[subcategoria.Nombre]';
+        } 
+        $config = array(
+            array(
+                'field' => 'nombresub',
+                'label' => 'categoria',
+                'rules' => 'required'.$uniquenom,
+                'errors' => array(
+                    'required' => 'Debe ingresar el nombre de %s',
+                    'is_unique' => 'El nombre de la  %s ya pertenece a un registro.',
+                ),
+            ),
+        );
+        $this->form_validation->set_rules($config);
+		if ($this->form_validation->run()) {     
+           
+            $data = array(
+
+                'Nombre' => $nombresub,
+                'IdCategoria'=>$categoria 
+
+            );
+            if($this->subcategoria_model->update($IdSubcategoria,$data)){
+                redirect(base_url()."Mantenimiento/Subcategoria_controller");
+            }
+            else {
+                $this->session->set_flashdata("Error","No se pudo guardar la información");
+                redirect(base_url()."Mantenimiento/Subcategoria_controller/edit/".$IdSubcategoria);
+            }
+      
+        }else{
+            $this->edit($IdSubcategoria);
+        }
+    }
+    // funcion para eliminar un registro
+    public function delete($IdSubcategoria){
+        $this->subcategoria_model->delete($IdSubcategoria);
+        redirect(base_url()."Mantenimiento/Subcategoria_controller");
+    }
+
 }

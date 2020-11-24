@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <h1>
-          Cataegoria
+          Categoria
           <small>Editar</small>
       </h1>
     </div>
