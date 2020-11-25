@@ -54,6 +54,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="<?php echo base_url( ); ?>Mantenimiento/Talla_controller" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Talla</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Proveedor_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Proveedor</p>

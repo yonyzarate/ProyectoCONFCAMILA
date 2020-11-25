@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class marca_model extends CI_Model {
+class marca_model extends CI_Model { 
     public function __construct()
     {
         parent::__construct();

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Marca extends CI_Controller {
+class Marca extends CI_Controller { 
 
 	private $permisos;
 	public function __construct(){
@@ -37,10 +37,10 @@ class Marca extends CI_Controller {
 		
 	}
 
-	public function sumar($a,$b)
-	{
-		return $a+$b;
-	}
+	// public function sumar($a,$b)
+	// {
+	// 	return $a+$b;
+	// }
 // 
 	public function store(){
 		$nombre = $this->input->post("nombre");
