@@ -255,3 +255,21 @@ CREATE TABLE Talla (
     IdTalla INTEGER AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL
 )ENGINE=INNODB DEFAULT CHARSET=Latin1;
+
+CREATE TABLE Producto (
+    IdProducto INTEGER AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(50) NOT NULL,
+    Codigo int(30) NOT NULL UNIQUE,
+    Descripcion VARCHAR(200),
+    Stock NUMERIC(20) NOT NULL,
+    Imagen VARCHAR(50)NULL,
+    PrecioVenta DECIMAL(10,2),
+    PrecioOferta DECIMAL(10,2),
+    IdColor INT (11)NOT NULL,
+    IdTalla INT (11)NOT NULL,
+    IdSubcategoria INT (11)NOT NULL,
+    Estado enum('Activo','Inactivo') NULL,
+    CONSTRAINT FK_color_Producto FOREIGN KEY (IdColor) REFERENCES Color (IdColor),
+    CONSTRAINT FK_Talla_Producto FOREIGN KEY (IdTalla) REFERENCES Nacionalidad (IdTalla),
+    CONSTRAINT FK_Subcategoria_Producto FOREIGN KEY (IdSubcategoria) REFERENCES Subcategoria (IdSubcategoria)
+)ENGINE=INNODB DEFAULT CHARSET=Latin1;
