@@ -120,6 +120,42 @@ var base_url= "<?php echo base_url();?>";
         html += "<p><strong></strong>"+infoproducto[16]+"</p>";
         $("#modal-default .modal-body").html(html);
     });
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+
+        $("#categoria").change(function(){
+          var IdCategoria = $("#categoria").val();
+          // alert (IdCategoria);
+          if(IdCategoria !=''){
+            $.ajax({
+              method: "POST",
+              url: "<?php echo base_url();?>Producto1_controller/fetchSubcategoria",
+              data: {IdCategoria:IdCategoria},
+              success: function (data) {
+                  $("#subcategoria").html(data);                
+              }
+            });
+          }
+        });
+    $(".btn-view-producto1").click(function(){
+            
+        var producto =$(this).val();
+        var infoproducto = producto.split("*");
+        html = "<p><strong>Nombre: </strong>"+infoproducto[1]+"</p>"
+        html += "<img src='"+base_url+"/uploads/imagenes/producto/"+infoproducto[2]+"' width='100px' height='100px'>"
+        html += "<p><strong>Codigo: </strong>"+infoproducto[3]+"</p>"
+        html += "<p><strong>Descripción: </strong>"+infoproducto[4]+"</p>"
+        html += "<p><strong>Stock: </strong>"+infoproducto[5]+"</p>"
+        html += "<p><strong>Precio de venta: </strong>"+infoproducto[6]+"</p>";
+        html += "<p><strong>Precio de oferta: </strong>"+infoproducto[7]+"</p>";
+        html += "<p><strong>Color: </strong>"+infoproducto[8]+"</p>";
+        html += "<p><strong>Talla: </strong>"+infoproducto[9]+"</p>";
+        //html += "<p><strong>Categoria: </strong>"+infoproducto[10]+"</p>";
+        html += "<p><strong>Subcategoria:</strong>"+infoproducto[10]+"</p>";
+        $("#modal-default .modal-body").html(html);
+    });
     
    
     $('#example1').DataTable({
