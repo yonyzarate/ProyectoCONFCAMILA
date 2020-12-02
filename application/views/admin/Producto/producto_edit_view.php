@@ -164,7 +164,8 @@
                                         </div>
                                         <div class="form-group col-md-4 <?php echo !empty(form_error("caracteristicas"))? 'has-danger':'';?>">
                                             <label  class="form-control-label" for="caracteristicas"> Caracteristicas</label>
-                                            <textarea class="form-control form-control-danger" rows="8"  id="caracteristicas" name="caracteristicas" style="resize: both;"><?php echo !empty(form_error("caracteristicas"))? set_value("caracteristicas"):$producto->Caracteristicas?></textarea>
+                                            <textarea class="form-control form-control-danger" rows="8"  id="caracteristicas" name="caracteristicas" style="resize: both;">
+                                            <?php echo !empty(form_error("caracteristicas"))? set_value("caracteristicas"):$producto->Caracteristicas?></textarea>
                                             <?php echo form_error("caracteristicas","<span class='form-control-feedback' >","</span>");?>
                                         </div>
                                     </div>

@@ -131,10 +131,12 @@ var base_url= "<?php echo base_url();?>";
           if(IdCategoria !=''){
             $.ajax({
               method: "POST",
-              url: "<?php echo base_url();?>Producto1_controller/fetchSubcategoria",
+              url: "<?php echo base_url();?>Mantenimiento/Producto1_controller/fetchSubcategoria",
               data: {IdCategoria:IdCategoria},
               success: function (data) {
-                  $("#subcategoria").html(data);                
+                  $("#subcategoria").html(data);
+                  $("#subcategoria").removeAttr('disabled');
+                                  
               }
             });
           }
@@ -193,7 +195,7 @@ var base_url= "<?php echo base_url();?>";
         }
     });
 
-     $('.sidebar-menu').tree();
+    //  $('.sidebar-menu').tree();
 
      
     

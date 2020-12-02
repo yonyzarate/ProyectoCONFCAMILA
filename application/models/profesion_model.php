@@ -30,4 +30,4 @@ class profesion_model extends CI_Model {
         return $this->db->update("profesion",$data);
     }
 
-}
+} 
