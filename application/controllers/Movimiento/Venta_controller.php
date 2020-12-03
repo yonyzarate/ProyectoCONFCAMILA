@@ -11,7 +11,7 @@ class Venta_controller extends CI_Controller {
 		$this->permisos =$this->backend_lib->control();
         $this->load->model("venta_model");
 		$this->load->model("cliente_model");
-		$this->load->model("producto_model");
+		$this->load->model("producto1_model");
 		
           
     } 
@@ -114,12 +114,12 @@ class Venta_controller extends CI_Controller {
 	 protected function updateProducto($idproducto,$cantidad){
 		 $idcomprobante = $this->input->post("idcomprobante");
 		//  $ActualIdComprobante =$this->venta_model->getComprobante($idcomprobante);
-		 $productoActual = $this->producto_model->new_producto($idproducto);
+		 $productoActual = $this->producto1_model->new_producto($idproducto);
 		 if($idcomprobante == 1){
 		 $data = array(
 			 'Stock'=> $productoActual->Stock - $cantidad,
 		 );
-		 $this->producto_model->update($idproducto,$data);
+		 $this->producto1_model->update($idproducto,$data);
 		}
 		else{}
 	 }
@@ -134,6 +134,6 @@ class Venta_controller extends CI_Controller {
 				 
 			 );
 			
-		 $this->load->view("admin/Ventas/venta_view",$data);
+		 $this->load->view("admin/Ventas/venta_view",$data); 
 	 }
 }

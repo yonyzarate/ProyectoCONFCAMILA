@@ -97,29 +97,7 @@ var base_url= "<?php echo base_url();?>";
         $("#modal-default .modal-body").html(html);
     });
 
-    $(".btn-view-producto").on("click",function(){
-            
-        var producto =$(this).val();
-        var infoproducto = producto.split("*");
-        html = "<p><strong>Nombre: </strong>"+infoproducto[1]+"</p>"
-        html += "<img src='"+base_url+"/uploads/imagenes/producto/"+infoproducto[2]+"' width='100px' height='100px'>"
-        html += "<p><strong>Numero de serie: </strong>"+infoproducto[3]+"</p>"
-        html += "<p><strong>Codigo: </strong>"+infoproducto[4]+"</p>"
-        html += "<p><strong>Codigo de barra: </strong>"+infoproducto[5]+"</p>"
-        html += "<p><strong>Descripciòn: </strong>"+infoproducto[6]+"</p>"
-        html += "<p><strong>Stock: </strong>"+infoproducto[7]+"</p>"
-        html += "<p><strong>Precio de compra: </strong>"+infoproducto[8]+"</p>";
-        html += "<p><strong>Precio de venta: </strong>"+infoproducto[9]+"</p>";
-        html += "<p><strong>Precio de oferta: </strong>"+infoproducto[10]+"</p>";
-        html += "<p><strong>Nacionalidad: </strong>"+infoproducto[11]+"</p>";
-        html += "<p><strong>Color: </strong>"+infoproducto[12]+"</p>";
-        html += "<p><strong>Marca: </strong>"+infoproducto[13]+"</p>";
-        html += "<p><strong>Tipo de Producto: </strong>"+infoproducto[14]+"</p>";
-        html += "<p><strong>Proveedor: </strong>"+infoproducto[15]+"</p>";
-        html += "<p><strong>Caracteristicas:</strong>"+infoproducto[16]+"</p>";
-        html += "<p><strong></strong>"+infoproducto[16]+"</p>";
-        $("#modal-default .modal-body").html(html);
-    });
+   
         $(".custom-file-input").on("change", function() {
           var fileName = $(this).val().split("\\").pop();
           $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
@@ -244,7 +222,7 @@ var base_url= "<?php echo base_url();?>";
                   url:base_url+ "Movimiento/Venta_controller/view",
                   type:"POST",
                   datetype:"html",
-                  data:{id:valor_id},
+                  data:{id:valor_id}, 
                   success:function(data){
                     $("#modal-default .modal-body").html(data);  
                   }

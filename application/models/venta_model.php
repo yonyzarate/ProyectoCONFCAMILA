@@ -7,7 +7,7 @@ class venta_model extends CI_Model {
         parent::__construct();
 
     } 
-    public function getventa(){
+    public function getventa(){ 
         $this->db->select("ve.IdVenta, ve.Fecha, ve.SubTotal, ve.Iva, ve.Descuento, ve.Total, ve.NroVenta, ve.NroComprobante, cl.Nombre, 
         CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, ve.Estado FROM venta AS ve
         INNER JOIN cliente AS cl ON cl.IdCliente=ve.IdCliente 
@@ -55,7 +55,7 @@ class venta_model extends CI_Model {
     }
     public function getdetalle($idventa){
         $this->db->select(" de.IdDetalleVenta,de.IdVenta, pr.Codigo, pr.Nombre,de.Precio, de.Cantidad, de.Importe
-        FROM detalleventa AS de INNER JOIN producto AS pr ON pr.IdProducto=de.IdProducto WHERE de.IdVenta ='$idventa'");
+        FROM detalleventa AS de INNER JOIN producto1 AS pr ON pr.IdProducto=de.IdProducto WHERE de.IdVenta ='$idventa'");
         $resultados = $this->db->get();
         return $resultados->result();
     }
@@ -70,8 +70,8 @@ class venta_model extends CI_Model {
         return $resultados->row();
     }
     public function getproductos($valor){
-        $this->db->select("IdProducto as id, Codigo as codigo, Nombre as label, PrecioCompra as precio, Stock as stock");
-        $this->db->from("producto");
+        $this->db->select("IdProducto as id, Codigo as codigo, Nombre as label, PrecioVenta as precio, Stock as stock");
+        $this->db->from("producto1");
         $this->db->like("nombre",$valor);
         $resultados =$this->db->get();
         return $resultados->result_array();

@@ -198,13 +198,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Reportes/ReporteVenta_controller/" class="nav-link">
+                <a href="<?php echo base_url( ); ?>Reportes/ReporteVenta_controller/factura/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Reporte de ventas</p>
-                </a>
+                </a> 
               </li>
               <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Movimiento/Venta_controller/" class="nav-link">
+                <a href="<?php echo base_url( ); ?>Reportes/ReporteVenta_controller/cotizacion/" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Reporte de cotización </p>
                 </a>

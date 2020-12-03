@@ -8,10 +8,11 @@ class ReporteVenta_controller extends CI_Controller {
         parent:: __construct();
         $this->permisos =$this->backend_lib->control();
         $this->load->model("venta_model");
+        $this->load->model("reporte_model");
     }
 
-/// controlador para llamar el listado de modelo para mostrar en la vista 
-public function index()
+    /// controlador para llamar el listado de modelo para mostrar en la vista 
+    public function index()
 	{
         $fechainicio = $this->input->post("fechainicio");
         $fechafin = $this->input->post("fechafin");
@@ -32,7 +33,52 @@ public function index()
         $this->load->view('layouts/aside');
         $this->load->view('admin/Reporte/reporte_venta_view',$data);
         $this->load->view('layouts/footer');
-    }
+    } 
+    /// controlador para llamar el listado de modelo para mostrar en la vista 
+    public function factura()
+	{
+        $fechainicio = $this->input->post("fechainicio");
+        $fechafin = $this->input->post("fechafin");
+        if($this->input->post("buscar")){
+            $ventas = $this->reporte_model->getVentasbyDatefactura($fechainicio,$fechafin);
+
+        }
+        else{
+            $ventas = $this->reporte_model->getfactura();
+        }
+        $data = array(
+            'permisos' =>$this->permisos,
+			'ventas' => $ventas,
+			'fechainicio' => $fechainicio,
+			'fechafin' => $fechafin
+		);
+        $this->load->view('layouts/header');
+        $this->load->view('layouts/aside');
+        $this->load->view('admin/Reporte/reporte_venta_view',$data);
+        $this->load->view('layouts/footer');
+    } 
+    public function cotizacion()
+	{
+        $fechainicio = $this->input->post("fechainicio");
+        $fechafin = $this->input->post("fechafin");
+        if($this->input->post("buscar")){
+            $ventas = $this->reporte_model->getVentasbyDatecotizacion($fechainicio,$fechafin);
+
+        }
+        else{
+            $ventas = $this->reporte_model->getcotizacion();
+        }
+        $data = array(
+            'permisos' =>$this->permisos,
+			'ventas' => $ventas,
+			'fechainicio' => $fechainicio,
+			'fechafin' => $fechafin
+		);
+        $this->load->view('layouts/header');
+        $this->load->view('layouts/aside');
+        $this->load->view('admin/Reporte/reporte_cotizacion_view',$data);
+        $this->load->view('layouts/footer');
+    } 
 
 
 }

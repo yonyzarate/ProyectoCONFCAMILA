@@ -4,7 +4,7 @@
     <div class="content-header">
       <h1>
           Reportes
-          <small>ventas</small>
+          <small>cotización</small>
       </h1>
     </div>
     <div class="content">
@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-md-4">
                                 <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
-                                <a href="<?php echo base_url(); ?>Reportes/ReporteVenta_controller/factura" class="btn btn-danger">Restablecer</a>
+                                <a href="<?php echo base_url(); ?>Reportes/ReporteVenta_controller/cotizacion" class="btn btn-danger">Restablecer</a>
                             </div>
                     
                         </div>
