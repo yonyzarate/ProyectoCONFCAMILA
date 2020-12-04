@@ -72,7 +72,8 @@ class venta_model extends CI_Model {
     public function getproductos($valor){
         $this->db->select("IdProducto as id, Codigo as codigo, Nombre as label, PrecioVenta as precio, Stock as stock");
         $this->db->from("producto1");
-        $this->db->like("nombre",$valor);
+        $this->db->where("Estado","Activo");
+        $this->db->like("codigo",$valor);
         $resultados =$this->db->get();
         return $resultados->result_array();
         

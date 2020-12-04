@@ -50,7 +50,7 @@
                                     <label for="">Cliente:</label>
                                     <div class="input-group">
                                         <input type="hidden" name="idcliente" id="idcliente">
-                                        <input type="text" class="form-control" disabled="disabled" id="cliente">
+                                        <input type="text" class="form-control"  id="cliente" required>
                                         <span class="input-group-btn">
                                             <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-default" ><span class="fa fa-search"></span> Buscar</button>
                                         </span>
@@ -77,7 +77,7 @@
                             </div>
                             <table id="tbventas" class="table table-bordered table-striped table-hover">
                                 <thead>
-                                    <tr>
+                                    <tr> 
                                         <th>Codigo</th>
                                         <th>Nombre</th>
 
@@ -110,7 +110,7 @@
                                 <div class="col-md-3">
                                     <div class="input-group">
                                         <span class="input-group-addon">Descuento:</span>
-                                        <input type="text" class="form-control" placeholder="Username" name="descuento" value="0.00" readonly="readonly">
+                                        <input type="text" class="form-control" placeholder="Username" name="descuento" id="descuento" value="0.00" readonly="readonly">
                                     </div>
                                 </div>
                                 <div class="col-md-3">

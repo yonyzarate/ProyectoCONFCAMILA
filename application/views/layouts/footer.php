@@ -281,7 +281,7 @@ var base_url= "<?php echo base_url();?>";
    }) 
    // funcion  de autocompletado   del producto que queremos vender una ves elegido mandarlo al boton agregar los campos que queremos 
    //del producto este este caso seria los campos id,codigo,nombre,precio y estock del producto  
-   $("#producto").autocomplete({
+   $("#producto").autocomplete({ 
         source: function(request, response){
             $.ajax({
               url:base_url+"Movimiento/Venta_controller/getproductos",

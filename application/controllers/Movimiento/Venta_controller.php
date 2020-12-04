@@ -43,7 +43,7 @@ class Venta_controller extends CI_Controller {
 		
     }
 	
-	public function getproductos(){
+	public function getproductos(){ 
 		$valor = $this->input->post("valor");
 		$clientes = $this->venta_model->getproductos($valor);
 		echo json_encode($clientes);
