@@ -65,7 +65,7 @@
     </form>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto" >
       
       
      
@@ -76,10 +76,10 @@
                                 <img src="<?php echo base_url( ). "assets/"; ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <span class="hidden-xs"><?php echo $this->session->userdata("Nombre")?></span>
                             </a>
-                            <ul class="dropdown-menu"> 
-                                <li class="user-body">
+                            <ul class="dropdown-menu" > 
+                                <li class="user-body" >
                                     <div class="row">
-                                        <div class="col-sm-12 text-center">
+                                        <div class="col-sm-12 text-center" >
                                             <a href="<?php echo base_url(); ?>auth/logout"> Cerrar Sesión</a>
                                         </div>
                                     </div>

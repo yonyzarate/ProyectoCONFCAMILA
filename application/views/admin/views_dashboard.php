@@ -1,60 +1,113 @@
 
+        <!-- =============================================== -->
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-md-3">
-            <h1 class="m-0 text-dark">Portada</h1>
-          </div><!-- /.col -->
-          <div class="col-md-3">
-            <h1 class="m-0 text-dark"></h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url( ); ?>auth/logout">Inicio</a></li>
-              
-            </ol>
-          </div><!-- /.col -->
-          <div class="card-body login-card-body">
-          <div class="form-group">
-          <div class="row mb-2">
-                            
-                             
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                Dashboard
+                <small>Panel Control </small>
+                </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-primary">
+                            <div class="inner">
+                                <h3><?php echo $cantClientes;?></h3>
+
+                                <p>Clientes</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="<?php echo base_url();?>Mantenimiento/Natural_controller" class="small-box-footer">Ver Clientes <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
-          </div>
-          <div class="form-group">
-          <div class="row mb-2">
-          <div class="input-group mb-3">
-                    
-                  </div>
-          </div>
-          </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h3><?php echo $cantProductos;?></h3>
 
-          <!-- <section data-cognex-ignore>
-        <h6 class="h1 heading-lead mt-3">Productos destacados de Tecsa</h6>
-        <ul class="tile-list">
-                    <li class="tile-list-item">
-                        <div class="box box-animated">
-                            <a class="img-center" href="/es-co/products/barcode-readers/fixed-mount-barcode-readers/dataman-70-series">
-                                <img src='/library/media/products/products-home-module/dataman70-homepage.png?h=483&amp;w=600&amp;la=es-CO&amp;hash=16830D74886570CD5BC2FB062083C069006FE959' class='box-img' width='600' height='483' alt='DataMan 70' />
-                                <div class="box-block-animated">
-                                    <div class="box-block">
-                                        <h4 class="box-title text-uppercase">animated banert</h4>
-                                        <p class="box-text">El DataMan 70 ofrece una formación avanzada de imágenes de códigos 1-D y 2-D impresos en etiquetas, en un tamaño compacto.</p>
+                                <p>Productos</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="<?php echo base_url();?>Mantenimiento/Producto1_controller" class="small-box-footer">Ver Productos <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-yellow">
+                            <div class="inner">
+                                <h3><?php echo $cantUsuarios;?></h3>
+
+                                <p>Usuarios</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="<?php echo base_url( ); ?>Mantenimiento/Usuario_controller" class="small-box-footer">Ver Usuarios <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-red">
+                            <div class="inner">
+                                <h3><?php echo $cantVentas; ?></h3>
+
+                                <p>Ventas</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="<?php echo base_url();?>Movimiento/Venta_controller/" class="small-box-footer">Ver Ventas <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Grafico estadistico</h3>
+
+                                <div class="box-tools pull-right">
+                                    <select name="year" id="year" class="form-control">
+                                        <?php foreach($years as $year):?>
+                                            <option value="<?php echo $year->year;?>"><?php echo $year->year;?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                        <div id="grafico" style="min-width: 310px; height: 400px;margin: 0 auto"></div>
                                     </div>
                                 </div>
-                            </a>
+                                <!-- /.row -->
+                            </div>
+                            <!-- ./box-body -->
                         </div>
-                    </li>
-        </ul>
-        </section> -->
-          </div>
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    
-  </div>
-  
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->

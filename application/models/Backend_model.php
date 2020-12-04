@@ -16,4 +16,11 @@ class Backend_model extends CI_Model {
         $resultado = $this->db->get("permisos");
         return $resultado->row();
     }
+    public function rowCount($tabla){
+		if ($tabla != "confcamila") {
+			$this->db->where("Estado","Activo");
+		}
+		$resultados = $this->db->get($tabla);
+		return $resultados->num_rows();
+	}
 }
