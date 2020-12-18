@@ -1,7 +1,7 @@
 
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4"  style="background-color: #222cf1">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 "  style="background-color: #222cf1">
     <!-- Brand Logo -->
     <a href="<?php echo base_url( ); ?>dashboard" class="brand-link">
       <img src="<?php echo base_url( ). "assets/"; ?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -29,18 +29,18 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Producto_controller" class="nav-link">
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/Producto_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Producto</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Marca" class="nav-link">
+              </li> -->
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/Marca" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marca</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Categoria_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -65,18 +65,18 @@
                   <p>Producto CONF</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Proveedor_controller" class="nav-link">
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/Proveedor_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Proveedor</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/TipoPago_controller" class="nav-link">
+              </li> -->
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/TipoPago_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tipo de pago</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Personal_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -101,24 +101,24 @@
                   <p>Roles</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Nacionalidad_controller" class="nav-link">
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/Nacionalidad_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Nacionalidad</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Color_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Color</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Tipo_controller" class="nav-link">
+              <!-- <li class="nav-item">
+                <a href="<?php //echo base_url( ); ?>Mantenimiento/Tipo_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tipo de producto</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Imagen_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

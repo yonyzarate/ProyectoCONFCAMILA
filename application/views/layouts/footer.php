@@ -51,6 +51,9 @@
 <script src="<?php echo base_url( ). "assets/"; ?>plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
 <script src="<?php echo base_url( ). "assets/"; ?>plugins/summernote/summernote-bs4.min.js"></script>
+<!-- Highcharts  -->
+<script src="<?php echo base_url( ). "assets/"; ?>plugins/Highcharts/highcharts.js"></script>
+<script src="<?php echo base_url( ). "assets/"; ?>plugins/Highcharts/exporting.js"></script>
 <!-- jquery-ui -->
 <script src="<?php echo base_url( ). "assets/"; ?>jquery_ui/jquery-ui.js"></script>
 <!-- overlayScrollbars -->
@@ -72,13 +75,27 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 <script type="text/javascript">
 var base_url= "<?php echo base_url();?>";
+var year = (new Date).getFullYear();
   $(document).ready(function(){
+    graficar();
+
+    $("#year1").change(function(){
+      selectyear = $(this).val();
+      datagrafico(base_url,selectyear);
+    });
+    $("#btnventas").click(function(){
+        
+        $(".modal-header").css("background","#ff0000");
+        $(".modal-title").css("color","#ffffff");
+        $("#my-modal").modal("show");
+        datagrafico(base_url,year);
+    });
     
     function myFunction() {
       var d = new Date();
       var n = d.toLocaleString();
-  document.write("demo").innerHTML = n;
-}
+    document.write("demo").innerHTML = n;
+  } 
     $(".btn-view-personal").on("click",function(){
 
         var personal =$(this).val();
@@ -405,6 +422,126 @@ var base_url= "<?php echo base_url();?>";
         );
     });
     
+    // funcion para graficar con highcharts
+    function graficar(){
+    Highcharts.chart('grafico', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Monto acumulado por las ventas de los meses'
+      },
+      subtitle: {
+          text: '2020'
+      },
+      xAxis: {
+          categories: [
+              'Ene',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Ago',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dic'
+          ],
+          crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Monto acumulado (bolivianos)'
+          }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [{
+          name: 'CONFCAMILA',
+          data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+      
+      }]
+  }); 
+  }  
+
+  // Funcion para traerme el monto para el grafico de las ventas 
+  function datagrafico(base_url,year){
+    namesMonth = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+    $.ajax({
+      url: base_url + "dashboard/getData",
+      type: "POST",
+      data:{year:year},
+      dataType:"json",
+      success:function(data){
+        var meses = new Array();
+        var montos = new Array();
+        $.each(data,function(key, value){
+          meses.push(namesMonth[value.Mes -1]);
+          valor = Number(value.Monto);
+          montos.push(valor);
+        });
+        graficar1(meses,montos,year);
+      }
+    });
+  }
+  ///// GRAFICO MODAL
+    function graficar1(meses,montos){
+    Highcharts.chart('container-modal', {
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'Monto acumulado por las ventas de los meses'
+      },
+      subtitle: {
+          text: 'Año '+year
+      },
+      xAxis: {
+          categories: meses,
+          crosshair: true
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Monto acumulado (bolivianos)'
+          }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f} Bs</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [{
+          name: 'Meses',
+          data: montos
+      
+      }]
+  });   
+ }
 </script>
 </body>
 </html>

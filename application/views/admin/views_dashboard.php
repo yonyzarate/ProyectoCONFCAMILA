@@ -78,36 +78,68 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="box">
-                            <div class="box-header with-border">
+                        <div class="row">
+                            <div class="col-md-8">
                                 <h3 class="box-title">Grafico estadistico</h3>
-
-                                <div class="box-tools pull-right">
+                            </div>
+                            <div class="col-md-2 text-center">
+                                <div class="btm-group" role="group" aria-label="grupo de botones" lang="es">
+                                    <button role="button" id="btnventas" class="btn btn-primary">Grafico de ventas</button>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-2">
                                     <select name="year" id="year" class="form-control">
                                         <?php foreach($years as $year):?>
                                             <option value="<?php echo $year->year;?>"><?php echo $year->year;?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                            </div>
                             <!-- /.box-header -->
-                            <div class="box-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        
-                                        <div id="grafico" style="min-width: 310px; height: 400px;margin: 0 auto"></div>
-                                    </div>
-                                </div>
-                                <!-- /.row -->
-                            </div>
+                            
                             <!-- ./box-body -->
                         </div>
                         <!-- /.box -->
                     </div>
                     <!-- /.col -->
                 </div>
+                <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                        <div id="grafico" style="min-width: 310px; height: 400px;margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->  
+                            </div>
                 <!-- /.row -->
             </section>
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
+    <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="my-modal-title">Grafico de ventas</h5>
+                    <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-2">
+                                    <select name="year1" id="year1" class="form-control">
+                                        <?php foreach($years as $year):?>
+                                            <option value="<?php echo $year->year;?>"><?php echo $year->year;?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
+                        </div>
+                    </div>
+                    <div id="container-modal" style="min-width: 320px; height: 400px; margin: 0 auto;"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
