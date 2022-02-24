@@ -249,7 +249,7 @@ CREATE TABLE SubCategoria (
     IdSubcategoria INTEGER AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL,
     IdCategoria INT (11) NOT NULL,
-    CONSTRAINT FK_Personal_Categoria FOREIGN KEY (IdCategoria) REFERENCES Categoria (IdCategoria)
+    CONSTRAINT FK_Categoria_Subcategoria FOREIGN KEY (IdCategoria) REFERENCES Categoria (IdCategoria)
 )ENGINE=INNODB DEFAULT CHARSET=Latin1;
 CREATE TABLE Talla (
     IdTalla INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -270,6 +270,6 @@ CREATE TABLE Producto1 (
     IdSubcategoria INT (11)NOT NULL,
     Estado enum('Activo','Inactivo') NULL,
     CONSTRAINT FK_color_Producto FOREIGN KEY (IdColor) REFERENCES Color (IdColor),
-    CONSTRAINT FK_Talla_Producto FOREIGN KEY (IdTalla) REFERENCES Nacionalidad (IdTalla),
+    CONSTRAINT FK_Talla_Producto FOREIGN KEY (IdTalla) REFERENCES Talla (IdTalla),
     CONSTRAINT FK_Subcategoria_Producto FOREIGN KEY (IdSubcategoria) REFERENCES Subcategoria (IdSubcategoria)
-)ENGINE=INNODB DEFAULT CHARSET=Latin1;
+)ENGINE=INNODB DEFAULT CHARSET=Latin1; 
