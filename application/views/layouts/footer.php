@@ -76,26 +76,12 @@
 <script type="text/javascript">
 var base_url= "<?php echo base_url();?>";
 var year = (new Date).getFullYear();
-  $(document).ready(function(){
-    graficar();
-
-    $("#year1").change(function(){
-      selectyear = $(this).val();
-      datagrafico(base_url,selectyear);
-    });
-    $("#btnventas").click(function(){
-        
-        $(".modal-header").css("background","#ff0000");
-        $(".modal-title").css("color","#ffffff");
-        $("#my-modal").modal("show");
-        datagrafico(base_url,year);
-    });
-    
+$(document).ready(function(){
     function myFunction() {
-      var d = new Date();
-      var n = d.toLocaleString();
+    var d = new Date();
+    var n = d.toLocaleString();
     document.write("demo").innerHTML = n;
-  } 
+    }
     $(".btn-view-personal").on("click",function(){
 
         var personal =$(this).val();
@@ -113,9 +99,7 @@ var year = (new Date).getFullYear();
         html += "<p><strong>Estado: </strong>"+infopersonal[11]+"</p>"; 
         $("#modal-default .modal-body").html(html);
     });
-
-   
-        $(".custom-file-input").on("change", function() {
+    $(".custom-file-input").on("change", function() {
           var fileName = $(this).val().split("\\").pop();
           $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
@@ -135,26 +119,26 @@ var year = (new Date).getFullYear();
               }
             });
           }
-        });
-    $(".btn-view-producto1").click(function(){
+        });  
+        // evento que me muestra en un modal la informacion de producto 
+        $(".btn-view-producto1").click(function(){
             
-        var producto =$(this).val();
-        var infoproducto = producto.split("*");
-        html = "<p><strong>Nombre: </strong>"+infoproducto[1]+"</p>"
-        html += "<img src='"+base_url+"/uploads/imagenes/producto/"+infoproducto[2]+"' width='100px' height='100px'>"
-        html += "<p><strong>Codigo: </strong>"+infoproducto[3]+"</p>"
-        html += "<p><strong>Descripción: </strong>"+infoproducto[4]+"</p>"
-        html += "<p><strong>Stock: </strong>"+infoproducto[5]+"</p>"
-        html += "<p><strong>Precio de venta: </strong>"+infoproducto[6]+"</p>";
-        html += "<p><strong>Precio de oferta: </strong>"+infoproducto[7]+"</p>";
-        html += "<p><strong>Color: </strong>"+infoproducto[8]+"</p>";
-        html += "<p><strong>Talla: </strong>"+infoproducto[9]+"</p>";
-        //html += "<p><strong>Categoria: </strong>"+infoproducto[10]+"</p>";
-        html += "<p><strong>Subcategoria:</strong>"+infoproducto[10]+"</p>";
-        $("#modal-default .modal-body").html(html);
-    });
+            var producto =$(this).val();
+            var infoproducto = producto.split("*");
+            html = "<p><strong>Nombre: </strong>"+infoproducto[1]+"</p>"
+            html += "<img src='"+base_url+"/uploads/imagenes/producto/"+infoproducto[2]+"' width='100px' height='100px'>"
+            html += "<p><strong>Codigo: </strong>"+infoproducto[3]+"</p>"
+            html += "<p><strong>Descripción: </strong>"+infoproducto[4]+"</p>"
+            html += "<p><strong>Stock: </strong>"+infoproducto[5]+"</p>"
+            html += "<p><strong>Precio de venta: </strong>"+infoproducto[6]+"</p>";
+            html += "<p><strong>Precio de oferta: </strong>"+infoproducto[7]+"</p>";
+            html += "<p><strong>Color: </strong>"+infoproducto[8]+"</p>";
+            html += "<p><strong>Talla: </strong>"+infoproducto[9]+"</p>";
+            html += "<p><strong>Subcategoria:</strong>"+infoproducto[10]+"</p>";
+            $("#modal-default .modal-body").html(html);
+        });
+        
     
-   
     $('#example1').DataTable({
         "language": {
             "lengthMenu": "Mostrar _MENU_ registros por pagina",
@@ -190,11 +174,26 @@ var year = (new Date).getFullYear();
         }
     });
 
-    //  $('.sidebar-menu').tree();
+     $('.sidebar-menu').tree();
 
-     
-    
   });
+
+  $(document).ready(function(){
+        graficar();
+
+    $("#year1").change(function(){
+      selectyear = $(this).val();
+      datagrafico(base_url,selectyear);
+    });
+    $("#btnventas").click(function(){
+
+        $(".modal-header").css("background","#ff0000");
+        $(".modal-title").css("color","#ffffff");
+        $("#my-modal").modal("show");
+        datagrafico(base_url,year);
+    });
+  });
+
   // metodo para sacar reportes tanto en excel y pdf
   $("#example").DataTable( {
         dom: "Bfrtip",
@@ -251,21 +250,7 @@ var year = (new Date).getFullYear();
     $("#modal-default .modal-body").print();
   });
   
-//motodo que me elimine un producto del detalle de la venta de la venta de ventas 
-    $(document).on("click",".btn-remove-producto", function(){
-        $(this).closest("tr").remove();
-        sumar();
-    });
-    // metodo que multiplica la cantidad y el precio asi mandarlo a importe el resultado por ejemplo si quiereo comprar 
-    // una mazana y tiene como precio 3bs pero quiero dos mazanas entoces sera 3(precio) *2(cantidad)=6 y ese sera el importe 
-    $(document).on("keyup","#tbventas input.cantidades", function(){
-        cantidad = $(this).val();
-        precio = $(this).closest("tr").find("td:eq(2)").text();
-        importe = cantidad * precio;
-        $(this).closest("tr").find("td:eq(5)").children("p").text(importe.toFixed(2));
-        $(this).closest("tr").find("td:eq(5)").children("input").val(importe.toFixed(2));
-        sumar();
-    });
+
    //metodo que seleccionar un cliente nos mandara todos los datos del cliente 
   $(document).on("click",".btn-check",function(){
         cliente = $(this).val();
@@ -340,6 +325,21 @@ var year = (new Date).getFullYear();
             swal("seleccione un producto..."); 
 
         }
+    });
+    //motodo que me elimine un producto del detalle de la venta de la venta de ventas 
+    $(document).on("click",".btn-remove-producto", function(){
+        $(this).closest("tr").remove();
+        sumar();
+    });
+    // metodo que multiplica la cantidad y el precio asi mandarlo a importe el resultado por ejemplo si quiereo comprar 
+    // una mazana y tiene como precio 3bs pero quiero dos mazanas entoces sera 3(precio) *2(cantidad)=6 y ese sera el importe 
+    $(document).on("keyup","#tbventas input.cantidades", function(){
+        cantidad = $(this).val();
+        precio = $(this).closest("tr").find("td:eq(2)").text();
+        importe = cantidad * precio;
+        $(this).closest("tr").find("td:eq(5)").children("p").text(importe.toFixed(2));
+        $(this).closest("tr").find("td:eq(5)").children("input").val(importe.toFixed(2));
+        sumar();
     });
 //la funcion sumar lo utilizamos 
     function sumar(){
@@ -500,26 +500,26 @@ var year = (new Date).getFullYear();
     });
   }
   ///// GRAFICO MODAL
-    function graficar1(meses,montos){
+function graficar1(meses,montos){
     Highcharts.chart('container-modal', {
       chart: {
-          type: 'column'
+        type: 'column'
       },
       title: {
-          text: 'Monto acumulado por las ventas de los meses'
+        text: 'Monto acumulado por las ventas de los meses'
       },
       subtitle: {
-          text: 'Año '+year
+        text: 'Año '+year
       },
       xAxis: {
-          categories: meses,
-          crosshair: true
+        categories: meses,
+        crosshair: true
       },
       yAxis: {
-          min: 0,
-          title: {
-              text: 'Monto acumulado (bolivianos)'
-          }
+        min: 0,
+        title: {
+            text: 'Monto acumulado (bolivianos)'
+        }
       },
       tooltip: {
           headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -540,8 +540,8 @@ var year = (new Date).getFullYear();
           data: montos
       
       }]
-  });   
- }
+     });   
+}
 </script>
 </body>
 </html>

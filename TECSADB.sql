@@ -191,7 +191,7 @@ CREATE TABLE DetalleVenta (
     IdVenta INT NULL,
     IdProducto INT NULL,
     CONSTRAINT FK_Personal_Venta FOREIGN KEY (IdVenta) REFERENCES Venta (IdVenta),
-    CONSTRAINT FK_Personal_Producto FOREIGN KEY  (IdProducto) REFERENCES Producto (IdProducto)
+    CONSTRAINT FK_Personal_Producto FOREIGN KEY  (IdProducto) REFERENCES Producto1 (IdProducto)
 )ENGINE=INNODB DEFAULT CHARSET=Latin1;
 
 CREATE TABLE Menu (

@@ -25,14 +25,14 @@ class producto1_model extends CI_Model {
         $this->db->order_by("Nombre","ASC");
         $resultado = $this->db->get("subcategoria");
 
-        $option ="";
+        $option ='<option value="">Select Subcategoria</option>';
         foreach ($resultado->result() as $row) {
             $option .='<option value="'.$row->IdSubcategoria.'">'.$row->Nombre.' </option>'; 
         }
         return $option;
     }
     // consulta que inserta a la base datos el nuevo
-    public function save($data){
+    public function save($data){ 
         return $this->db->insert("producto1",$data);
     }
 

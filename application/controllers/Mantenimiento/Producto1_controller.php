@@ -48,7 +48,7 @@ class Producto1_controller extends CI_Controller {
         if($this->input->post('IdCategoria')){
             echo $this->producto1_model->fetch_subcategoria($this->input->post('IdCategoria'));
         }
-    }
+    } 
    // controlador para 
     public function store(){
           $nombre = $this->input->post("nombre");

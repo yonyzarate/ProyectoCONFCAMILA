@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Venta_controller extends CI_Controller {
 	private $permisos;
     public function __construct(){
-		parent:: __construct();
+		parent:: __construct(); 
 		if(!$this->session->userdata("login")){
             redirect(base_url());
 		}
@@ -100,17 +100,17 @@ class Venta_controller extends CI_Controller {
 	 protected function save_detalle($productos,$idventa,$precios,$cantidades,$importes){
 		 for ($i=0; $i < count($productos) ; $i++) { 
 			 $data = array(
-				 'IdProducto'=>$productos[$i],
-				 'IdVenta'=>$idventa,
 				 'Precio'=> $precios[$i],
 				 'Cantidad'=> $cantidades[$i],
 				 'Importe'=>$importes[$i],
+				 'IdVenta'=>$idventa,
+				 'IdProducto'=>$productos[$i],
 			 );
 			 $this->venta_model->save_detalle($data);
 			 $this->updateProducto($productos[$i],$cantidades[$i]);
 		 }
 	 }
-
+	//  funcion para actualizar la tabla de productos campo Stock
 	 protected function updateProducto($idproducto,$cantidad){
 		 $idcomprobante = $this->input->post("idcomprobante");
 		//  $ActualIdComprobante =$this->venta_model->getComprobante($idcomprobante);

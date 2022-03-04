@@ -135,9 +135,9 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="Nombre"> Subcategoria:</label>
-                                            <select class="form-control" name="subcategoria" id="subcategoria" disabled>
+                                            <select class="form-control" name="subcategoria" id="subcategoria" >
                                                 
-                                            </select>
+                                            </select> 
                                         </div>
                                     </div>
                                 </div>
