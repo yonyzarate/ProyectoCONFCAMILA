@@ -2,10 +2,10 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <h1>
-          Usuarios
-          <small>Listado</small>
-      </h1>
+        <h1>
+            Usuarios
+            <small>Listado</small> 
+        </h1>
     </div>
     <div class="card-body login-card-body ">
     <section class="content">
@@ -42,7 +42,6 @@
                                             <td><?php echo $usuario->Estado;?></td>
                                             <td>
                                                 <div class="btn-gruop">
-                                                  
                                                     <!--<a href="#" class="btn btn-info"><span class="fa fa-eye"></span></a>-->
                                                     <?php if($permisos->Actualizar==1):?>
                                                     <a href="<?php echo base_url();?>Mantenimiento/Usuario_controller/edit/<?php echo $usuario->IdUsuario;?>" class="btn btn-warning"><span class="fas fa-pencil-alt"></span>Editar</a>
@@ -64,4 +63,4 @@
         </div>
     </section>
     </div>
-  </div>
+</div>

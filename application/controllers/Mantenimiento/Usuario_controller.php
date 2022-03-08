@@ -7,7 +7,7 @@ class Usuario_controller extends CI_Controller {
     public function __construct(){
         parent:: __construct();
         $this->permisos =$this->backend_lib->control();
-        $this->load->model("usuarios_model");
+        $this->load->model("usuarios_model"); 
         
     }
     // formulario para la contraseña

@@ -7,7 +7,7 @@ class Backend_model extends CI_Model {
     public function getID($link){
         $this->db->like("Link",$link);
         $resultado = $this->db->get("menu");
-        return $resultado->row();
+        return $resultado->row(); 
     }
 
     public function getPermisos($menu,$rol){

@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <h1>
+      <h1> 
           Ventas 
           <small>Listado</small>
       </h1>

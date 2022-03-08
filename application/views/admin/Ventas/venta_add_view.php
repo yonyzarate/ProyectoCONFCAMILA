@@ -15,7 +15,7 @@
         <div class="box box-solid">
             <div class="box-body">
                 <div class="row mb-2">
-                    <div class="col-md-12">
+                    <div class="col-md-12"> 
                         
                         <form action="<?php echo base_url();?>movimiento/Venta_controller/store" method="POST" class="form-horizontal">
                             <div class="form-group"> 

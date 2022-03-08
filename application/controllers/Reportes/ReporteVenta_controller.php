@@ -8,7 +8,7 @@ class ReporteVenta_controller extends CI_Controller {
         parent:: __construct();
         $this->permisos =$this->backend_lib->control();
         $this->load->model("venta_model");
-        $this->load->model("reporte_model");
+        $this->load->model("reporte_model"); 
     }
 
     /// controlador para llamar el listado de modelo para mostrar en la vista 
@@ -39,6 +39,12 @@ class ReporteVenta_controller extends CI_Controller {
 	{
         $fechainicio = $this->input->post("fechainicio");
         $fechafin = $this->input->post("fechafin");
+        // if ($fechainicio == $fechafin) {
+        //     $fechaactual = $fechainicio && $fechafin;
+        //     if($this->input->post("buscar")){
+        //         $ventas = $this->reporte_model->getVentasbyDatefacturaactual($fechaactual);
+        //     }
+        // }
         if($this->input->post("buscar")){
             $ventas = $this->reporte_model->getVentasbyDatefactura($fechainicio,$fechafin);
 

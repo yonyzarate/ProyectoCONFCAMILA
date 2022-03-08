@@ -9,7 +9,7 @@
     </div>
     <div class="content">
         <div class="box box-solid">
-            <div class="box-body">
+            <div class="box-body"> 
            
             <div class="row mb-2">
                     <form action="<?php echo current_url();?>" method="POST" class="form-horizontal">

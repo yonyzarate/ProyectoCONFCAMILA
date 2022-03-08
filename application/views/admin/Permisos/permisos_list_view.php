@@ -2,20 +2,20 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
-      <h1>
-          Permisos
-          <small>Listado</small>
-      </h1>
+        <h1>
+            Permisos 
+            <small>Listado</small> 
+        </h1>
     </div>
     <div class="content">
         <div class="box box-solid">
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                      <?php if($permiso->Insertar==1):?>
+                        <?php if($permiso->Insertar==1):?>
                         <a href="<?php echo base_url();?>Administrador/Permisos_controller/add" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span> Agregar Permisos</a>
                         <?php endif;?>
-                     </div>
+                        </div>
                 </div>
                 <hr>
                 <div class="row">
@@ -82,7 +82,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                 <?php endforeach;?>
+                                <?php endforeach;?>
                                 <?php endif;?>
                             </tbody>
                         </table>
@@ -93,4 +93,4 @@
         </div>
     </div>
     
-  </div>
+</div>

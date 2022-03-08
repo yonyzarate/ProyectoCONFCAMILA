@@ -7,7 +7,7 @@
           <small>Actualizar</small>
       </h1> 
     </div>
-    <div class="card-body login-card-body ">
+    <div class="card-body login-card-body "> 
     <section class="content">
         <div class="box box-solid">
             <div class="box-body">

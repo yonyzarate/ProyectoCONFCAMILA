@@ -12,7 +12,7 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php if($permisos->Insertar==1):?>
+                        <?php if($permisos->Insertar==1):?> 
                         <a href="<?php echo base_url();?>Mantenimiento/Categoria_controller/add" class="btn btn-primary btn-flat"><span class="fa fa-plus"></span> Agregar Categoria</a>
                         <?php endif;?>
                     </div>

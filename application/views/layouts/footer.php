@@ -500,7 +500,7 @@ $(document).ready(function(){
     });
   }
   ///// GRAFICO MODAL
-function graficar1(meses,montos){
+function graficar1(meses,montos,year){
     Highcharts.chart('container-modal', {
       chart: {
         type: 'column'
@@ -536,7 +536,7 @@ function graficar1(meses,montos){
           }
       },
       series: [{
-          name: 'Meses',
+          name: 'Monto',
           data: montos
       
       }]

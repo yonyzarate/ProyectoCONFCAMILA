@@ -5,7 +5,7 @@
     <section class="content-header">
         <h1>
         Permisos
-        <small>Nuevo</small>
+        <small>Nuevo</small> 
         </h1>
     </section>
     <!-- Main content -->

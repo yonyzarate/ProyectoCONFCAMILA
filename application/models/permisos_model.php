@@ -31,5 +31,5 @@ class permisos_model extends CI_Model {
         $this->db->where("IdPermiso",$IdPermiso);
         return  $this->db->update("permisos",$data);
         
-    }
+    } 
 }

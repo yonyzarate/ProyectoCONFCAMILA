@@ -19,7 +19,7 @@ class usuarios_model extends CI_Model {
         $resultados = $this->db->get();
 		if ($resultados->num_rows() > 0) {
 			return $resultados->row();
-		}
+		} 
 		else{
 			return false;
 		}
@@ -44,10 +44,9 @@ class usuarios_model extends CI_Model {
     }
     // Consulta que lleva datos de la lista para editarlo a la fila seleccionada
     public function getusuarios ($IdUsuario){
-    
         $this->db->where("IdUsuario",$IdUsuario);
-       $resultados = $this->db->get("usuario");
-       return $resultados->row();
+        $resultados = $this->db->get("usuario");
+        return $resultados->row();
 
     }
     // consulta que me trae la id y el nombre completo del personal para mostrarlo en el combo box o en seleccionar 

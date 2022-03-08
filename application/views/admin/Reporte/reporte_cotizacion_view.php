@@ -8,7 +8,7 @@
       </h1>
     </div>
     <div class="content">
-        <div class="box box-solid">
+        <div class="box box-solid"> 
             <div class="box-body">
            
             <div class="row mb-2">

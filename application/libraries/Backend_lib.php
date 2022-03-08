@@ -23,7 +23,7 @@ class Backend_lib{
             redirect(base_url("dashboard"));
         }else{
             return $permisos;
-        }
+        } 
 
     }
 }
