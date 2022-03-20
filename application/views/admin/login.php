@@ -6,7 +6,7 @@
   </head>
   <body>
     <div class="col-md-4">
-    <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logotecsa.png" style="
+    <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logoconfcamila.png" style="
     width: 1300px;
     height: 650px;">
     </div>
@@ -40,7 +40,7 @@
   body {
   margin: 0;
   padding: 0;
-  background: url(img/logotecsa.png) no-repeat center top;
+  background: url(img/logoconfcamila.png) no-repeat center top;
   background-size: cover;
   font-family: sans-serif;
   height: 100vh;

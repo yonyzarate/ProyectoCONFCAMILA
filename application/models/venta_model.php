@@ -75,7 +75,7 @@ class venta_model extends CI_Model {
         $this->db->where("Estado","Activo");
         $this->db->like("codigo",$valor);
         $resultados =$this->db->get();
-        return $resultados->result_array();
+        return $resultados->result_array(); 
         
     } 
     public function save($data){

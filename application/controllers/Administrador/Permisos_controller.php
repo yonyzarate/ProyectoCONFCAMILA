@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Permisos_controller extends CI_Controller {
     private $permisos;
-    public function __construct(){
+    public function __construct(){ 
         parent:: __construct();
         $this->permisos =$this->backend_lib->control();
         $this->load->model("permisos_model");
