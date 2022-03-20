@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="Nombre"> Subcategoria:</label>
-                                            <select class="form-control" name="subcategoria" id="subcategoria" >
+                                            <select class="form-control" name="subcategoria" id="subcategoria" disabled>
                                                 
                                             </select> 
                                         </div>
@@ -144,18 +144,27 @@
                                 <div class="form-group">
                                     <div class="row mb-2">
                                         <div class="form-group col-md-4">
+                                            <label for="Nombre"> Marca:</label>        
+                                            <select class="form-control"  title="Seleccione la marca." name="marca" id="marca">
+                                                <?php foreach($marca as $marca): ?>
+                                                    <option value="<?php echo $marca->IdMarca;?>"
+                                                    ><?php echo $marca->Nombre;?></option> 
+                                                <?php endforeach;?>                                        
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
+                                            <sup><h4></h4></sup>
+                                        </div>
+                                        <div class="form-group col-md-4">
                                             <label for="nombre"> Descripción:</label>
                                             <!-- <input type="textarea" class="form-control" id="nombre" name="nombre"> -->
                                             <textarea class="form-control" title="Ingrese una descripción ." placeholder="Enter ..." id="descripcion" name="descripcion"></textarea>
                                         </div>
-                                        <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
-                                         <sup><h4></h4></sup>
-                                        </div>
-                                       
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                   <button type="submit" class="btn btn-success btn-flat"><span class="fas fa-save"></span> Guardar</button>
+                                    <button type="submit" class="btn btn-success btn-flat"><span class="fas fa-save"></span> Guardar</button>
                                 </div>
                             </form>
                         

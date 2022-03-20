@@ -132,9 +132,10 @@ $(document).ready(function(){
             html += "<p><strong>Stock: </strong>"+infoproducto[5]+"</p>"
             html += "<p><strong>Precio de venta: </strong>"+infoproducto[6]+"</p>";
             html += "<p><strong>Precio de oferta: </strong>"+infoproducto[7]+"</p>";
-            html += "<p><strong>Color: </strong>"+infoproducto[8]+"</p>";
-            html += "<p><strong>Talla: </strong>"+infoproducto[9]+"</p>";
-            html += "<p><strong>Subcategoria:</strong>"+infoproducto[10]+"</p>";
+            html += "<p><strong>Marca: </strong>"+infoproducto[8]+"</p>";
+            html += "<p><strong>Color: </strong>"+infoproducto[9]+"</p>";
+            html += "<p><strong>Talla: </strong>"+infoproducto[10]+"</p>";
+            html += "<p><strong>Subcategoria: </strong>"+infoproducto[11]+"</p>";
             $("#modal-default .modal-body").html(html);
         });
         

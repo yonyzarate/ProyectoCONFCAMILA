@@ -123,9 +123,21 @@
                                 <div class="form-group">
                                     <div class="row mb-2">
                                         <div class="form-group col-md-4">
+                                            <label for="Nombre"> Marca:</label>        
+                                            <select class="form-control"  name="marca" id="marca">
+                                                <?php foreach($marca as $marca): ?>
+                                                    <option value="<?php echo $marca->IdMarca;?>"<?php echo $marca->IdMarca ==
+                                                    $producto->IdMarca? "selected":"";?>
+                                                    ><?php echo $marca->Nombre;?></option> 
+                                                <?php endforeach;?>                                        
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
+                                         <sup><h4></h4></sup>
+                                        </div>
+                                        <div class="form-group col-md-4">
                                             <label for="nombre"> Descripción:</label>
                                             <textarea class="form-control"   id="descripcion" name="descripcion"
-                                           
                                             ><?php echo !empty(form_error("caracteristicas"))?:$producto->Descripcion?></textarea>
                                         </div> 
                                         <div class="form-group col-md-4">

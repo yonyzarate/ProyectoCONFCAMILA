@@ -35,12 +35,12 @@
                   <p>Producto</p>
                 </a>
               </li> -->
-              <!-- <li class="nav-item">
-                <a href="<?php //echo base_url( ); ?>Mantenimiento/Marca" class="nav-link">
+              <li class="nav-item">
+                <a href="<?php echo base_url( ); ?>Mantenimiento/Marca" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Marca</p>
                 </a>
-              </li> -->
+              </li>
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Categoria_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -83,12 +83,7 @@
                   <p>Personal</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url( ); ?>Mantenimiento/Usuario_controller" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Usuario</p>
-                </a>
-              </li>
+          
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Profesion_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -119,12 +114,12 @@
                   <p>Tipo de producto</p>
                 </a>
               </li> -->
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Imagen_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Imagenes</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="<?php echo base_url( ); ?>Mantenimiento/Empresa_controller" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -228,10 +223,15 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Permisos</p>
                 </a>
-              
-              
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url( ); ?>Mantenimiento/Usuario_controller" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Usuario</p>
+                </a>
+              </li>
             </ul>
-          </li>
+          
           
         </ul>
       </nav>

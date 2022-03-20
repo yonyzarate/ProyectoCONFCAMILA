@@ -4,15 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class producto1_model extends CI_Model {
     public function __construct()
     {
-        parent::__construct();
+        parent::__construct(); 
 
     }
 // Consulta para traer a todos que tengan el estado activo 
     public function getproducto ()
     {
-        $this->db->select("pr.*, ta.Nombre as Talla, co.Nombre as Color, sub.Nombre as Subcategoria");
+        $this->db->select("pr.*,ma.Nombre as Marca, ta.Nombre as Talla, co.Nombre as Color, sub.Nombre as Subcategoria");
         $this->db->from("producto1 pr");
         $this->db->join("talla ta","ta.IdTalla=pr.IdTalla");
+        $this->db->join("marca ma","ma.IdMarca=pr.IdMarca");
         $this->db->join("color co","co.IdColor=pr.IdColor");
         $this->db->join("subcategoria sub","sub.IdSubcategoria=pr.IdSubcategoria");
         $this->db->where("pr.Estado","Activo");

@@ -3,18 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Marca extends CI_Controller { 
 
-	private $permisos;
+	private $permisos; 
 	public function __construct(){
 		parent:: __construct();
 		$this->permisos =$this->backend_lib->control();
 		$this->load->model("marca_model");
-		$this->load->library("unit_test");
+		$this->load->library("unit_test"); 
 	}
 // controlador que me manda a la vista lista de marca
 	public function index()
 	{
 		
-
 		$data = array(
 			'permisos' =>$this->permisos,
 			'marca' =>$this->marca_model->getmarca()

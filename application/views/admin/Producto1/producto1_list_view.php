@@ -56,6 +56,7 @@
                                                               $producto->Stock."*".
                                                               $producto->PrecioVenta."*".
                                                               $producto->PrecioOferta."*".
+                                                              $producto->Marca."*".
                                                               $producto->Color."*".
                                                               $producto->Talla."*".
                                                             //   $producto->Categoria."*".

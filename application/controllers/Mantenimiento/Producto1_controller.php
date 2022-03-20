@@ -11,7 +11,8 @@ class Producto1_controller extends CI_Controller {
         $this->load->model("color_model");
         $this->load->model("talla_model");
         $this->load->model("subcategoria_model");
-        $this->load->model("categoria_model");
+        $this->load->model("categoria_model"); 
+        $this->load->model("marca_model"); 
         
     }
     /// controlador para llamar el listado de modelo para mostrar en la vista 
@@ -33,6 +34,7 @@ class Producto1_controller extends CI_Controller {
             'color' =>$this->color_model->getcolor(),
             'talla' =>$this->talla_model->gettalla(),
             'categoria' =>$this->categoria_model->getcategoria(),
+            'marca' =>$this->marca_model->getmarca(),
             
 
         );
@@ -51,16 +53,17 @@ class Producto1_controller extends CI_Controller {
     } 
    // controlador para 
     public function store(){
-          $nombre = $this->input->post("nombre");
-          $codigo = $this->input->post("codigo");
-          $descripcion = $this->input->post("descripcion");
-          $stock = $this->input->post("stock");
-          $precioventa = $this->input->post("precioventa");
-          $preciooferta = $this->input->post("preciooferta");
-          $color = $this->input->post("color");
-          $talla = $this->input->post("talla");
-          $subcategoria = $this->input->post("subcategoria");
-          $imge = 'Sin_imagen_disponible.jpg';
+        $nombre = $this->input->post("nombre");
+        $codigo = $this->input->post("codigo");
+        $descripcion = $this->input->post("descripcion");
+        $stock = $this->input->post("stock");
+        $precioventa = $this->input->post("precioventa");
+        $preciooferta = $this->input->post("preciooferta");
+        $color = $this->input->post("color");
+        $talla = $this->input->post("talla");
+        $subcategoria = $this->input->post("subcategoria");
+        $marca = $this->input->post("marca");
+        $imge = 'Sin_imagen_disponible.jpg';
         
         $config = array(
 			array(
@@ -123,6 +126,7 @@ class Producto1_controller extends CI_Controller {
                     'Imagen' => $imge,
                     'PrecioVenta' => $precioventa,
                     'PrecioOferta' => $preciooferta,
+                    'IdMarca' => $marca,
                     'IdColor' => $color,
                     'IdTalla' => $talla,
                     'IdSubcategoria' => $subcategoria,
@@ -154,6 +158,7 @@ class Producto1_controller extends CI_Controller {
                         'Imagen' => $images,
                         'PrecioVenta' => $precioventa,
                         'PrecioOferta' => $preciooferta,
+                        'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
                         'IdSubcategoria' => $subcategoria,
@@ -180,6 +185,7 @@ class Producto1_controller extends CI_Controller {
             'color' =>$this->color_model->getcolor(),
             'talla' =>$this->talla_model->gettalla(),
             'subcategoria' =>$this->subcategoria_model->getsubcategoria(),
+            'marca' =>$this->marca_model->getmarca(),
 			'producto'=> $this->producto1_model->new_producto($IdProducto)
 		);
 		$this->load->view('layouts/header');
@@ -196,6 +202,7 @@ class Producto1_controller extends CI_Controller {
         $stock = $this->input->post("stock");
         $precioventa = $this->input->post("precioventa");
         $preciooferta = $this->input->post("preciooferta");
+        $marca = $this->input->post("marca");
         $color = $this->input->post("color");
         $talla = $this->input->post("talla");
         $descripcion = $this->input->post("descripcion");
@@ -258,6 +265,7 @@ class Producto1_controller extends CI_Controller {
                         'Stock' => $stock,
                         'PrecioVenta' => $precioventa,
                         'PrecioOferta' => $preciooferta,
+                        'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
                         'IdSubcategoria' => $subcategoria,
@@ -295,6 +303,7 @@ class Producto1_controller extends CI_Controller {
                         'Imagen' => $images,
                         'PrecioVenta' => $precioventa,
                         'PrecioOferta' => $preciooferta,
+                        'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
                         'IdSubcategoria' => $subcategoria,
@@ -310,7 +319,7 @@ class Producto1_controller extends CI_Controller {
                 }
             
 
-             }
+            }
         }
         else{
             $this->edit($IdProducto);
