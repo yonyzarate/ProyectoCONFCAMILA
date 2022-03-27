@@ -19,9 +19,10 @@
 
                         <?php endif;?>
                         <form action="<?php echo base_url();?>Mantenimiento/Color_controller/store" method="POST">
-                            <div class="form-group col-md-4" >
-                                <label for="nombre"> Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre">
+                        <div class="form-group col-md-4 <?php echo !empty(form_error("nombre"))? 'has-danger':'';?>">
+                                <label class="form-control-label" for="nombre"> Nombre</label>
+                                <input type="text" class="form-control form-control-danger" id="nombre" title="Coloque un nombre de un color." name="nombre" value="<?php echo set_value("nombre"); ?>">
+                                <?php echo form_error("nombre","<span class='help-block' style='color:red;'>","</span>");?>
                             </div>
                            <div class="form-group">
                                <button type="submit" class="btn btn-success btn-flat">Guardar</button>

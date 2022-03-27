@@ -78,7 +78,7 @@ class Producto1_controller extends CI_Controller {
             array(
                 'field' => 'codigo',
                 'label' => 'codigo',
-                'rules' => 'required|is_natural|is_unique[producto.Codigo]',
+                'rules' => 'required|is_natural|is_unique[producto1.Codigo]',
                 'errors' => array(
                     'required' => 'Debe ingresar un %s',
                     'is_unique' => 'El %s ya existe',

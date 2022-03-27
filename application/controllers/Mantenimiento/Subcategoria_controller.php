@@ -47,10 +47,10 @@ class Subcategoria_controller extends CI_Controller {
             array(
                 'field' => 'nombresub',
                 'label' => 'nombre de subcategoria',
-                'rules' => 'required|is_unique[subcategoria.Nombre]',
+                'rules' => 'required',
                 'errors' => array(
                     'required' => 'el %s es importante',
-                    'is_unique' => 'el %s ya existe',
+                    // 'is_unique' => 'el %s ya existe',
                 ),
             ),
            

@@ -35,19 +35,37 @@ class Color_controller extends CI_Controller {
     // Controlador que recoge datos de las consultas de model para insert un nuevo
     public function store(){
 		$nombre = $this->input->post("nombre");
-				
-		$data = array(
-			'Nombre' => $nombre,
-			'Estado'=> "Activo"
+
+		$config = array(
+			array(
+				'field' => 'nombre',
+				'label' => 'color',
+				'rules' => 'required|is_unique[color.Nombre]',
+				'errors' => array(
+                    'required' => 'Debe ingresar un nombre de una %s',
+                    'is_unique' => 'La %s ya existe.',
+				),
+			)
 		);
-		if($this->color_model->save($data)){
-			redirect(base_url()."Mantenimiento/Color_controller");
+		
+		$this->form_validation->set_rules($config);
+		if ($this->form_validation->run()) {
+			$data = array(
+				'Nombre' => $nombre,
+				'Estado'=> "Activo"
+			);
+			if($this->color_model->save($data)){
+				redirect(base_url()."Mantenimiento/Color_controller");
+			}
+			else {
+				$this->session->set_flashdata("Error","No se pudo guardar la información");
+				redirect(base_url()."Mantenimiento/Color/color_add_view");
+			}
 		}
-		else {
-			$this->session->set_flashdata("Error","No se pudo guardar la información");
-			redirect(base_url()."Mantenimiento/Color_controller/add");
+		else{
+			$this->add();
 		}
-    }
+	}
     // Controlador que trae los datos de la lista para poder editar y me manda los resultados a la vista editar 
     public function edit($IdColor){
 		$data = array(

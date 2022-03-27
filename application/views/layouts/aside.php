@@ -21,7 +21,7 @@
           <!-- opcion registro de la barra lateral--->
           <li class="nav-item has-treeview">
             <a href="<?php echo base_url( ). "assets/"; ?>#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
                 Registro
                 <i class="fas fa-angle-left right"></i>
@@ -132,7 +132,7 @@
             <!---- opcion del cliente de la barra lateral-->
           <li class="nav-item has-treeview">
             <a href="<?php echo base_url( ). "assets/"; ?>#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Cliente
                 <i class="fas fa-angle-left right"></i>
@@ -158,7 +158,7 @@
           <!---opcion ventas de productos -->
           <li class="nav-item has-treeview">
             <a href="<?php echo base_url( ). "assets/"; ?>#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-briefcase"></i>
               <p>
                 Movimiento
                 <i class="fas fa-angle-left right"></i>
@@ -184,7 +184,7 @@
 
           <li class="nav-item has-treeview">
             <a href="<?php echo base_url( ). "assets/"; ?>#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-chart-bar"></i>
               <p>
                 Reportes
                 <i class="fas fa-angle-left right"></i>

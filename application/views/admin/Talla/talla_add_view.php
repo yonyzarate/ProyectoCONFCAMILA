@@ -21,7 +21,7 @@
                         <form action="<?php echo base_url();?>Mantenimiento/Talla_controller/store" method="POST">
                         <div class="form-group col-md-4 <?php echo !empty(form_error("nombre"))? 'has-danger':'';?>">
                                 <label class="form-control-label" for="nombre"> Nombre:</label>
-                                <input type="text" class="form-control form-control-danger" id="nombre" title="Coloque un nombre de una talla." name="nombre" value="<?php echo set_value("nombre"); ?>">
+                                <input type="text" class="form-control form-control-danger" id="nombre" style="text-transform: lowercase;" title="Coloque un nombre de una talla." name="nombre" value="<?php echo set_value("nombre"); ?>">
                                 <?php echo form_error("nombre","<span class='help-block' style='color:red;'>","</span>");?>
                             </div>
                            <div class="form-group">

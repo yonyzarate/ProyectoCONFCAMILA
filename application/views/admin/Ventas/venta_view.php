@@ -3,13 +3,13 @@
     <div class="col-xs-12 text-center" style="width: 781px;">
     <div class="row mb-2">
 	    <div class="col-xs-6">
-            <b><img src="<?php echo base_url()?>uploads/imagenes/logo_ofial_tecsa.png" width="150px" height="100px" alt=""></b><br>
+            <b><img src="<?php echo base_url()?>uploads/imagenes/logooficial.png" width="150px" height="100px" alt=""></b><br>
         </div>
         <div class="col-xs-6" style="padding-left: 100px;">
-            <h2>Tecsa</h2>
+            <h2>CONFCAMILA</h2>
 		    <b>Nit:</b>12448335<br>
 		    <b>Telefono:</b>3344493 <br>
-            <b>Direccion</b>Av. Santos dumont 4to anillo<br>
+            <b>Direccion</b>Villa primero de mayo calle 2<br>
         </div>
     </div>
     </div>
