@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Marca extends CI_Controller { 
+class Marca extends CI_Controller {  
 
 	private $permisos; 
 	public function __construct(){

@@ -88,7 +88,7 @@ class Juridico_controller extends CI_Controller {
 				'Telefono' => $telefono,
 				'Nit' => $nit,
 				'Gmail' => $gmail,
-				'IdTipoCliente' => $tdcliente,
+				'IdTipoCliente' => "2",
 				'Estado'=> "Activo"
 			);
 			if($this->cliente_model->save($data)){
@@ -166,7 +166,7 @@ class Juridico_controller extends CI_Controller {
 				'Telefono' => $telefono,
 				'Nit' => $nit,
 				'Gmail' => $gmail,
-				'IdTipoCliente' => $tdcliente,
+				'IdTipoCliente' => "2",
 			);
 			if($this->cliente_model->update($IdCliente,$data)){
 				redirect(base_url()."Mantenimiento/Juridico_controller");

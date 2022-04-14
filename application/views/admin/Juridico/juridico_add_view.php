@@ -25,10 +25,10 @@
                                 <div class="row mb-2">
                                     <div class="form-group col-md-4"> 
                                         <label for="Nombre"> Tipo de cliente:</label>
-                                        <select class="form-control" name="tdcliente" id="tdcliente">
+                                        <select class="form-control" name="tdcliente" id="tdcliente" disabled>
                                             <?php foreach($tipocliente as $tipocliente): ?>
                                                 <option value="<?php echo $tipocliente->IdTipoCliente;?>"
-                                                ><?php echo $tipocliente->Nombre;?></option> 
+                                                >Juridico</option> 
                                             <?php endforeach;?>                                        
                                         </select>
                                     </div>

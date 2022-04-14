@@ -12,7 +12,7 @@
             <div class="box box-solid">
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12"> 
                              
                             <?php if($this->session->flashdata("error")):?>
                                 <div>
@@ -121,23 +121,24 @@
                                     <div class="row mb-2">
                                         <div class="form-group col-md-4">
                                             <label for="Nombre"> Categoria:</label>
-                                            <select class="form-control"  name="categoria" id="categoria">
-                                                     <option value="">Selecionar Categoria</option>
-                                                 <?php foreach($categoria as $categoria): ?>
-                                                    
-                                                     <option value="<?php echo $categoria->IdCategoria;?>"
-                                                     ><?php echo $categoria->Nombre;?></option> 
-                                                 <?php endforeach;?>                                        
+                                            <select class="form-control" title="Seleccione la categoria del producto."  name="categoria" id="categoria">
+                                                <?php foreach($categoria as $categoria): ?>
+                                                    <option value="<?php echo $categoria->IdCategoria;?>"
+                                                    ><?php echo $categoria->Nombre;?></option> 
+                                                <?php endforeach;?>                                        
                                             </select>
                                         </div>
                                         <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
-                                         <sup><h4>*</h4></sup>
+                                         <sup><h4></h4></sup>
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="Nombre"> Subcategoria:</label>
-                                            <select class="form-control" name="subcategoria" id="subcategoria" disabled>
-                                                
-                                            </select> 
+                                        <label for="Nombre"> Modelo:</label>
+                                            <select class="form-control" title="Seleccione el modelo del producto." name="modelo" id="modelo">
+                                                <?php foreach($modelo as $modelo): ?>
+                                                    <option value="<?php echo $modelo->IdModelo;?>"
+                                                    ><?php echo $modelo->Nombre;?></option> 
+                                                <?php endforeach;?>                                        
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

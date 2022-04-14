@@ -133,7 +133,8 @@ $(document).ready(function(){
             html += "<p><strong>Marca: </strong>"+infoproducto[8]+"</p>";
             html += "<p><strong>Color: </strong>"+infoproducto[9]+"</p>";
             html += "<p><strong>Talla: </strong>"+infoproducto[10]+"</p>";
-            html += "<p><strong>Subcategoria: </strong>"+infoproducto[11]+"</p>";
+            html += "<p><strong>Categoria: </strong>"+infoproducto[11]+"</p>";
+            html += "<p><strong>Modelo: </strong>"+infoproducto[12]+"</p>";
             $("#modal-default .modal-body").html(html);
         });
         

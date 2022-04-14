@@ -87,7 +87,7 @@ class Natural_controller extends CI_Controller {
 				'Telefono' => $telefono,
 				'Nit' => $nit,
 				'Gmail' => $gmail,
-				'IdTipoCliente' => $tdcliente,
+				'IdTipoCliente' => "1",
 				'Estado'=> "Activo"
 			);
 			if($this->cliente_model->save($data)){
@@ -165,7 +165,7 @@ class Natural_controller extends CI_Controller {
 				'Telefono' => $telefono,
 				'Nit' => $nit,
 				'Gmail' => $gmail,
-				'IdTipoCliente'=> $tdcliente
+				'IdTipoCliente'=> "1"
 			);
 			if($this->cliente_model->update($IdCliente,$data)){
 				redirect(base_url()."Mantenimiento/Natural_controller");

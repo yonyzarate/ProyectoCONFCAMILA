@@ -10,7 +10,7 @@ class Producto1_controller extends CI_Controller {
         $this->load->model("producto1_model");
         $this->load->model("color_model");
         $this->load->model("talla_model");
-        $this->load->model("subcategoria_model");
+        $this->load->model("modelo_model");
         $this->load->model("categoria_model"); 
         $this->load->model("marca_model"); 
         
@@ -35,6 +35,7 @@ class Producto1_controller extends CI_Controller {
             'talla' =>$this->talla_model->gettalla(),
             'categoria' =>$this->categoria_model->getcategoria(),
             'marca' =>$this->marca_model->getmarca(),
+            'modelo' =>$this->modelo_model->getmodelo(),
             
 
         );
@@ -61,7 +62,8 @@ class Producto1_controller extends CI_Controller {
         $preciooferta = $this->input->post("preciooferta");
         $color = $this->input->post("color");
         $talla = $this->input->post("talla");
-        $subcategoria = $this->input->post("subcategoria");
+        $modelo = $this->input->post("modelo");
+        $categoria = $this->input->post("categoria");
         $marca = $this->input->post("marca");
         $imge = 'Sin_imagen_disponible.jpg';
         
@@ -129,7 +131,8 @@ class Producto1_controller extends CI_Controller {
                     'IdMarca' => $marca,
                     'IdColor' => $color,
                     'IdTalla' => $talla,
-                    'IdSubcategoria' => $subcategoria,
+                    'IdCategoria' => $categoria,
+                    'IdModelo' => $modelo,
                     'Estado'=> "Activo"
                 );
                 
@@ -161,7 +164,8 @@ class Producto1_controller extends CI_Controller {
                         'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
-                        'IdSubcategoria' => $subcategoria,
+                        'IdCategoria' => $categoria,
+                        'IdModelo' => $modelo,
                         'Estado'=> "Activo"
                     );
                     if($this->producto1_model->save($data)){
@@ -184,8 +188,9 @@ class Producto1_controller extends CI_Controller {
             
             'color' =>$this->color_model->getcolor(),
             'talla' =>$this->talla_model->gettalla(),
-            'subcategoria' =>$this->subcategoria_model->getsubcategoria(),
+            'categoria' =>$this->categoria_model->getcategoria(),
             'marca' =>$this->marca_model->getmarca(),
+            'modelo' =>$this->modelo_model->getmodelo(),
 			'producto'=> $this->producto1_model->new_producto($IdProducto)
 		);
 		$this->load->view('layouts/header');
@@ -206,7 +211,8 @@ class Producto1_controller extends CI_Controller {
         $color = $this->input->post("color");
         $talla = $this->input->post("talla");
         $descripcion = $this->input->post("descripcion");
-        $subcategoria = $this->input->post("subcategoria");
+        $categoria = $this->input->post("categoria");
+        $modelo = $this->input->post("modelo");
         
         $ProductoActual = $this->producto1_model->new_producto($IdProducto);
 
@@ -268,7 +274,8 @@ class Producto1_controller extends CI_Controller {
                         'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
-                        'IdSubcategoria' => $subcategoria,
+                        'IdCategoria' => $categoria,
+                        'IdModelo' => $modelo,
 
 
                 );
@@ -306,7 +313,8 @@ class Producto1_controller extends CI_Controller {
                         'IdMarca' => $marca,
                         'IdColor' => $color,
                         'IdTalla' => $talla,
-                        'IdSubcategoria' => $subcategoria,
+                        'IdCategoria' => $categoria,
+                        'IdModelo' => $modelo,
 
                     );
                     if($this->producto1_model->update($IdProducto,$data)){

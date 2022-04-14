@@ -25,7 +25,7 @@
                                     <div class="row mb-2">
                                         <div class="form-group col-md-4">
                                             <label for="personall"> Tipo de cliente:</label>
-                                            <select class="form-control" name="tdcliente" id="tdcliente">
+                                            <select class="form-control" name="tdcliente" id="tdcliente" disabled>
                                                 <?php foreach($tipocliente as $tipocliente): ?>
                                                     <option value="<?php echo $tipocliente->IdTipoCliente;?>"<?php echo $tipocliente->IdTipoCliente ==
                                                     $cliente->IdTipoCliente? "selected":"";?>

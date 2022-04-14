@@ -59,8 +59,8 @@
                                                               $producto->Marca."*".
                                                               $producto->Color."*".
                                                               $producto->Talla."*".
-                                                            //   $producto->Categoria."*".
-                                                              $producto->Subcategoria;?>
+                                                              $producto->Categoria."*".
+                                                              $producto->Modelo;?>
                                             
                                             <td>
                                                 <div class="btn-gruop">
