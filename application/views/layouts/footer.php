@@ -101,23 +101,23 @@ $(document).ready(function(){
           var fileName = $(this).val().split("\\").pop();
           $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
-
-        $("#categoria").change(function(){
-          var IdCategoria = $("#categoria").val();
-          // alert (IdCategoria);
-          if(IdCategoria !=''){
-            $.ajax({
-              method: "POST",
-              url: "<?php echo base_url();?>Mantenimiento/Producto1_controller/fetchSubcategoria",
-              data: {IdCategoria:IdCategoria},
-              success: function (data) {
-                  $("#subcategoria").html(data);
-                  $("#subcategoria").removeAttr('disabled');
+// select dinamico a la hora de seleccionar un select se muestra todas las opciones de ese categoria 
+        // $("#categoria").change(function(){
+        //   var IdCategoria = $("#categoria").val();
+        //   // alert (IdCategoria);
+        //   if(IdCategoria !=''){
+        //     $.ajax({
+        //       method: "POST",
+        //       url: "<?php echo base_url();?>Mantenimiento/Producto1_controller/fetchSubcategoria",
+        //       data: {IdCategoria:IdCategoria},
+        //       success: function (data) {
+        //           $("#subcategoria").html(data);
+        //           $("#subcategoria").removeAttr('disabled');
                                   
-              }
-            });
-          }
-        });  
+        //       }
+        //     });
+        //   }
+        // });  
         // evento que me muestra en un modal la informacion de producto 
         $(".btn-view-producto1").click(function(){
             

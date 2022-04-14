@@ -3,8 +3,8 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <h1>
-          Marcas
-          <small>Nuevo</small>
+          Modelos
+          <small>Editar</small>
       </h1>
     </div>
     <div class="content">
@@ -18,11 +18,13 @@
                             </div>
 
                         <?php endif;?>
-                        <form action="<?php echo base_url();?>Mantenimiento/Marca/store" method="POST">
+                        <form action="<?php echo base_url();?>Mantenimiento/Modelo_controller/update" method="POST">
+                            <input type="hidden" value="<?php echo $modelo->IdModelo; ?>" name="IdModelo" >
                             <div class="form-group col-md-4 <?php echo !empty(form_error("nombre"))? 'has-danger':'';?>">
                                 <label class="form-control-label" for="nombre"> Nombre</label>
-                                <input type="text" class="form-control form-control-danger" id="nombre" title="Coloque un nombre de una marca." name="nombre" value="<?php echo set_value("nombre"); ?>">
-                                <?php echo form_error("nombre","<span class='help-block' style='color:red;'>","</span>");?>
+                                <input type="text" class="form-control form-control-danger"  title="Editar el nombre del modelo." name="nombre" 
+                                value="<?php echo !empty(form_error("nombre"))? set_value("nombre"): $modelo->Nombre ;?>">
+                                <?php echo form_error("nombre","<span class='help-block'style='color:red;'>","</span>");?>
                             </div>
                            <div class="form-group">
                                <button type="submit" class="btn btn-success btn-flat">Guardar</button>
