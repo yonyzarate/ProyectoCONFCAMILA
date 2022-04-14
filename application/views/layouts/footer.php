@@ -1,6 +1,6 @@
 <!-- / barra de abajo donde esta alojado el pie de la pagina  -->
 <footer class="main-footer">
-    <strong>Sistema de ventas &copy; 2020 <a href="<?php echo base_url( ). "assets/"; ?>http://adminlte.io">CONFCAMILA</a>.</strong>
+    <strong>Sistema de ventas &copy; 2020 <a href="<?php echo base_url( ); ?>dashboard">CONFCAMILA</a></strong>
     Todos los derechos reservados.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
@@ -13,8 +13,6 @@
   </aside>
   <!-- /.control-sidebar -->
 </div>
-<!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="<?php echo base_url( ). "assets/"; ?>plugins/jquery/jquery.min.js"></script>
 <!-- jQuery-print  -->

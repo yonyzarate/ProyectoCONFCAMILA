@@ -6,13 +6,13 @@
   </head>
   <body>
     <div class="col-md-4">
-    <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logoconfcamila.png" style="
+    <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logolargologin.png" style="
     width: 1300px;
     height: 650px;">
     </div>
   
     <div class="login-box">
-      <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logoo.png" class="avatar" alt="Avatar Image">
+      <img src="<?php echo base_url( ). "assets/"; ?>imagenes/logoconfcamila1.png" class="avatar" alt="Avatar Image">
       
       <h1>Sistema de ventas</h1>
         <?php if($this->session->flashdata("error")):?>
@@ -40,7 +40,7 @@
   body {
   margin: 0;
   padding: 0;
-  background: url(img/logoconfcamila.png) no-repeat center top;
+  /* background: url(img/logoconfcamila.png) no-repeat center top; */
   background-size: cover;
   font-family: sans-serif;
   height: 100vh;
