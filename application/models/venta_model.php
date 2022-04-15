@@ -9,9 +9,10 @@ class venta_model extends CI_Model {
     } 
     public function getventa(){ 
         $this->db->select("ve.IdVenta, ve.Fecha, ve.SubTotal, ve.Iva, ve.Descuento, ve.Total, ve.NroVenta, ve.NroComprobante, cl.Nombre, 
-        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, ve.Estado FROM venta AS ve
+        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, tp.Nombre AS Tipopago, ve.Estado FROM venta AS ve
         INNER JOIN cliente AS cl ON cl.IdCliente=ve.IdCliente 
         INNER JOIN personal AS pe ON pe.IdPersonal=ve.IdPersonal
+        INNER JOIN tipopago AS tp ON tp.IdTipopago=ve.IdTipopago
         INNER JOIN tipo_comprobante AS tc ON tc.IdTipo_comprobante=ve.IdTipo_comprobante WHERE ve.Estado='Activo';");
         $resultados = $this->db->get();
 		if ($resultados->num_rows() > 0) {
@@ -23,9 +24,10 @@ class venta_model extends CI_Model {
     }
     public function getVentasbyDate($fechainicio,$fechafin){
         $this->db->select("ve.IdVenta, ve.Fecha, ve.SubTotal, ve.Iva, ve.Descuento, ve.Total, ve.NroVenta, ve.NroComprobante, cl.Nombre, 
-        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, ve.Estado FROM venta AS ve
+        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, tp.Nombre AS Tipopago, ve.Estado FROM venta AS ve
         INNER JOIN cliente AS cl ON cl.IdCliente=ve.IdCliente 
         INNER JOIN personal AS pe ON pe.IdPersonal=ve.IdPersonal
+        INNER JOIN tipopago AS tp ON tp.IdTipopago=ve.IdTipopago
         INNER JOIN tipo_comprobante AS tc ON tc.IdTipo_comprobante=ve.IdTipo_comprobante
 		   WHERE (ve.Fecha >='$fechainicio' AND  ve.Fecha <='$fechafin')");
         $resultados = $this->db->get();
@@ -41,9 +43,10 @@ class venta_model extends CI_Model {
         $this->db->select("ve.IdVenta, ve.Fecha, ve.SubTotal, ve.Iva, ve.Descuento, ve.Total, ve.NroVenta, ve.NroComprobante,
         cl.Nombre, cl.Nit,cl.Telefono,cl.Direccion, 
        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal,
-        tc.Nombre AS Comprobante  FROM venta AS ve
+        tc.Nombre AS Comprobante, tp.Nombre AS Tipopago  FROM venta AS ve
        INNER JOIN cliente AS cl ON cl.IdCliente=ve.IdCliente 
        INNER JOIN personal AS pe ON pe.IdPersonal=ve.IdPersonal
+       INNER JOIN tipopago AS tp ON tp.IdTipopago=ve.IdTipopago
        INNER JOIN tipo_comprobante AS tc ON tc.IdTipo_comprobante=ve.IdTipo_comprobante WHERE ve.IdVenta='$idventa'");
         $resultados = $this->db->get();
         return $resultados->row();

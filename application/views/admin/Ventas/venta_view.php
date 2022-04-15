@@ -73,6 +73,10 @@
 					<td colspan="4" class="text-right"><strong>Total:</strong></td>
 					<td><?php echo $ventas->Total; ?></td>
 				</tr>
+				<tr>
+					<td colspan="4" class="text-right"><strong>Tipo de pago:</strong></td>
+					<td><?php echo $ventas->Tipopago; ?></td>
+				</tr>
 			</tfoot>
 		</table>
 	</div>

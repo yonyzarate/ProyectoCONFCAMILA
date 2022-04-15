@@ -77,16 +77,16 @@
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12"> 
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <h3 class="box-title">Grafico estadistico</h3>
                             </div>
-                            <div class="col-md-2 text-center">
+                            <!-- <div class="col-md-2 text-center">
                                 <div class="btm-group" role="group" aria-label="grupo de botones" lang="es">
                                     <button role="button" id="btnventas" class="btn btn-primary">Grafico de ventas</button>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="col-md-2">
                                     <select name="year" id="year" class="form-control">
@@ -94,7 +94,7 @@
                                             <option value="<?php echo $year->year;?>"><?php echo $year->year;?></option>
                                         <?php endforeach;?>
                                     </select>
-                                </div>
+                            </div>
                             <!-- /.box-header -->
                             
                             <!-- ./box-body -->

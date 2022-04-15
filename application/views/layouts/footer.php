@@ -179,19 +179,21 @@ $(document).ready(function(){
   });
 
   $(document).ready(function(){
-        graficar();
+        // graficar();
+        datagrafico(base_url,year);
 
-    $("#year1").change(function(){
+    $("#year").change(function(){
       selectyear = $(this).val();
       datagrafico(base_url,selectyear);
     });
-    $("#btnventas").click(function(){
+      // datagrafico(base_url,year);
+    // $("#btnventas").click(function(){
 
-        $(".modal-header").css("background","#ff0000");
-        $(".modal-title").css("color","#ffffff");
-        $("#my-modal").modal("show");
-        datagrafico(base_url,year);
-    });
+    //     $(".modal-header").css("background","#ff0000");
+    //     $(".modal-title").css("color","#ffffff");
+    //     $("#my-modal").modal("show");
+    //     datagrafico(base_url,year);
+    // });
   });
 
   // metodo para sacar reportes tanto en excel y pdf
@@ -423,7 +425,7 @@ $(document).ready(function(){
     });
     
     // funcion para graficar con highcharts
-    function graficar(){
+    function graficarr(){
     Highcharts.chart('grafico', {
       chart: {
           type: 'column'
@@ -501,7 +503,8 @@ $(document).ready(function(){
   }
   ///// GRAFICO MODAL
 function graficar1(meses,montos,year){
-    Highcharts.chart('container-modal', {
+    // Highcharts.chart('container-modal', {
+    Highcharts.chart('grafico', {
       chart: {
         type: 'column'
       },
@@ -524,7 +527,7 @@ function graficar1(meses,montos,year){
       tooltip: {
           headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
           pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>{point.y:.1f} Bs</b></td></tr>',
+              '<td style="padding:0"><b>{point.y:.2f} Bs</b></td></tr>',
           footerFormat: '</table>',
           shared: true,
           useHTML: true

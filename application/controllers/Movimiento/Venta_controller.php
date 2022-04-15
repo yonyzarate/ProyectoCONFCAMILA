@@ -12,6 +12,7 @@ class Venta_controller extends CI_Controller {
         $this->load->model("venta_model");
 		$this->load->model("cliente_model");
 		$this->load->model("producto1_model");
+		$this->load->model("tipopago_model");
 		
           
     } 
@@ -32,7 +33,8 @@ class Venta_controller extends CI_Controller {
 	{
 		$data = array(
 			"tipocomprobantes" => $this->venta_model->getComprobantes(),
-			"cliente" => $this->cliente_model->getCliente()
+			"cliente" => $this->cliente_model->getCliente(),
+			"tipopago" => $this->tipopago_model->gettipopago()
 		);
 		
 		
@@ -42,14 +44,14 @@ class Venta_controller extends CI_Controller {
         $this->load->view('layouts/footer');
 		
     }
-	
+	 
 	public function getproductos(){ 
 		$valor = $this->input->post("valor");
 		$clientes = $this->venta_model->getproductos($valor);
 		echo json_encode($clientes);
 	}
 	public function store (){
-		 $fecha = $this->input->post("fecha");
+		//  $fecha = $this->input->post("fecha");
 		 $subtotal = $this->input->post("subtotal");
 		 $iva = $this->input->post("iva");
 		 $descuento = $this->input->post("descuento");
@@ -59,6 +61,7 @@ class Venta_controller extends CI_Controller {
 		 $idcliente = $this->input->post("idcliente");
 		 $idusuario = $this->session->userdata("IdUsuario");
 		 $idcomprobante = $this->input->post("idcomprobante");
+		 $tipopago = $this->input->post("tipopago");
 		
 		 $idproductos = $this->input->post("idproductos");
 		 $precios = $this->input->post("precios");
@@ -66,7 +69,7 @@ class Venta_controller extends CI_Controller {
 		 $importes = $this->input->post("importes");
 		
 		$data = array(
-			'Fecha'=>$fecha,
+			// 'Fecha'=>$fecha,
 			'SubTotal'=>$subtotal,
 			'Iva'=>$iva,
 			'Descuento'=>$descuento,
@@ -76,6 +79,7 @@ class Venta_controller extends CI_Controller {
 			'IdCliente'=>$idcliente,
 			'IdPersonal'=>$idusuario,
 			'IdTipo_comprobante'=>$idcomprobante,
+			'IdTipopago'=>$tipopago,
 			'Estado'=>"Activo"
 		);
 		if($this->venta_model->save($data)){

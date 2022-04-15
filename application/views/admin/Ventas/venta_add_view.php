@@ -21,7 +21,7 @@
                             <div class="form-group"> 
                             <div class="row mb-2">
                                 <div class="col-md-3" >
-                                <label for="">Comprobante:</label>
+                                    <label for="">Comprobante:</label>
                                     <select name="comprobantes" id="comprobantes" class="form-control" required>
                                         <option value="">Seleccione...</option>
                                         <?php foreach($tipocomprobantes as $tipocomprobante):?> 
@@ -123,10 +123,22 @@
                             </div>
                             
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-success btn-flat">Guardar</button>
+                                <div class="row mb-2">
+                                    <div class="col-md-8">
+                                        <button type="submit" class="btn btn-success btn-flat">Guardar</button>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:right">
+                                                <label for="Nombre"> Tipo de pago:</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                                <select class="form-control" title="Seleccione el tipo de pago."  name="tipopago" id="tipopago">
+                                                    <?php foreach($tipopago as $tipopago): ?>
+                                                        <option value="<?php echo $tipopago->IdTipopago;?>"
+                                                        ><?php echo $tipopago->Nombre;?></option> 
+                                                    <?php endforeach;?>                                        
+                                                </select>
+                                    </div>
                                 </div>
-                                
                             </div>
                         </form>
                     </div>
