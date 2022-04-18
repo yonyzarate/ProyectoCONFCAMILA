@@ -119,7 +119,7 @@
                                         <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
                                          <sup><h4>*</h4></sup>
                                         </div>
-                                        <div class="form-group col-md-4"> 
+                                        <!-- <div class="form-group col-md-4"> 
                                                 <label for="Nombre"> Sexo:</label>
                                                 <select class="form-control" title="Seleccone el sexo" name="sexo" id="sexo">
                                                     <?php foreach($sexo as $sexo): ?>
@@ -127,6 +127,15 @@
                                                         ><?php echo $sexo->Nombre;?></option> 
                                                     <?php endforeach;?>                                        
                                                 </select>
+                                        </div> -->
+                                        <div class="form-group col-md-4">
+                                            <label for="read">Sexo:</label><br>
+                                            <label class="radio-inline" style="padding-right : 14px">
+                                                <input type="radio" name="sexo" value="Hombre" checked="checked">Hombre
+                                            </label>
+                                            <label class="radio-inline" >
+                                                <input type="radio" name="sexo" value="Mujer" >Mujer
+                                            </label>
                                         </div>
                                         <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
                                          <sup><h4></h4></sup>

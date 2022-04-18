@@ -12,10 +12,9 @@ class personal_model extends CI_Model {
     {
        
         $this->db->select("pe.IdPersonal, CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno)AS Nombre, pe.Direccion,
-        pe.Telefono,pe.Gmail,  pe.CedulaIdentidad, pe.FechaNacimiento, pe.FechaRegistro, se.Nombre AS Sexo, pr.Nombre AS Profesion, ro.Nombre AS Rol, pe.Estado  
-      FROM personal AS pe INNER JOIN profesion AS pr ON pr.IdProfesion=pe.IdProfesion  INNER JOIN rol AS ro ON ro.IdRol=pe.IdRol INNER JOIN 
-      sexo AS se ON se.IdSexo= pe.IdSexo 
-       WHERE pe.Estado='Activo' ");
+        pe.Telefono,pe.Gmail,  pe.CedulaIdentidad, pe.FechaNacimiento, pe.FechaRegistro, pe.Sexo, pr.Nombre AS Profesion, ro.Nombre AS Rol, pe.Estado  
+      FROM personal AS pe INNER JOIN profesion AS pr ON pr.IdProfesion=pe.IdProfesion  INNER JOIN rol AS ro ON ro.IdRol=pe.IdRol
+      WHERE pe.Estado='Activo' ");
         $resultado = $this->db->get();
         return $resultado->result();
     }

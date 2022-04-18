@@ -39,15 +39,10 @@ class ReporteVenta_controller extends CI_Controller {
 	{
         $fechainicio = $this->input->post("fechainicio");
         $fechafin = $this->input->post("fechafin");
-        // if ($fechainicio == $fechafin) {
-        //     $fechaactual = $fechainicio && $fechafin;
-        //     if($this->input->post("buscar")){
-        //         $ventas = $this->reporte_model->getVentasbyDatefacturaactual($fechaactual);
-        //     }
-        // }
+        
         if($this->input->post("buscar")){
             $ventas = $this->reporte_model->getVentasbyDatefactura($fechainicio,$fechafin);
-
+            // $ventatotal = $this->reporte_model->montototal($fechainicio,$fechafin);
         }
         else{
             $ventas = $this->reporte_model->getfactura();
@@ -56,7 +51,7 @@ class ReporteVenta_controller extends CI_Controller {
             'permisos' =>$this->permisos,
 			'ventas' => $ventas,
 			'fechainicio' => $fechainicio,
-			'fechafin' => $fechafin
+			'fechafin' => $fechafin,
 		);
         $this->load->view('layouts/header');
         $this->load->view('layouts/aside');

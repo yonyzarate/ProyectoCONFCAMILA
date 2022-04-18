@@ -82,23 +82,22 @@
                                         </div>
                                      </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group"> 
                                      <div class="row mb-2">
                                         <div class="form-group col-md-4">
                                             <label for="nombre"> Fecha Registro</label>
                                             <input type="date" class="form-control" id="fecharegistro" name="fecharegistro" value="<?php echo $personal->FechaRegistro?>">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="personall"> Sexo</label>
-                                             <select class="form-control" name="sexo" id="sexo">
-                                                <?php foreach($sexo as $sexo): ?>
-                                                    <option value="<?php echo $sexo->IdSexo;?>"<?php echo $sexo->IdSexo ==
-                                                    $personal->IdSexo? "selected":"";?>
-                                                    ><?php echo $sexo->Nombre;?></option> 
-                                                <?php endforeach;?>                                        
-                                             </select>
-                                        </div>
-                                     </div>
+                                            <label for="read">Sexo:</label><br>
+                                            <label class="radio-inline" style="padding-right : 14px">
+                                                <input type="radio" name="sexo" value="Hombre" <?php echo $personal->Sexo == 'Hombre' ? "checked":"";?>>Hombre
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="sexo" value="Mujer" <?php echo $personal->Sexo == 'Mujer' ? "checked":"";?>>Mujer
+                                            </label>
+                                    </div>
+                                 </div>
                                 </div>
                                 <div class="form-group">
                                      <div class="row mb-2">
@@ -128,7 +127,6 @@
                                         </div>
                                      </div>
                                 </div>
-
                         </div>
                                 <div class="form-group">
                                    <button type="submit" class="btn btn-success btn-flat">Guardar</button>

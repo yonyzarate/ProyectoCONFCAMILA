@@ -73,6 +73,7 @@
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 <script type="text/javascript">
 var base_url= "<?php echo base_url();?>";
+// var mes = (new Date).getFullMonth();
 var year = (new Date).getFullYear();
 $(document).ready(function(){
     function myFunction() {
@@ -186,16 +187,28 @@ $(document).ready(function(){
       selectyear = $(this).val();
       datagrafico(base_url,selectyear);
     });
-      // datagrafico(base_url,year);
-    // $("#btnventas").click(function(){
-
-    //     $(".modal-header").css("background","#ff0000");
-    //     $(".modal-title").css("color","#ffffff");
-    //     $("#my-modal").modal("show");
-    //     datagrafico(base_url,year);
-    // });
   });
+  
+  $(document).ready(function(){
+    var mes = (new Date).getFullMonth();
 
+  
+    $("#year1").change(function(){
+      selectyear = $(this).val();
+      datagrafico1(base_url,selectyear);
+    });
+    $("#mes").change(function(){
+      selectmes = $(this).val();
+      datagrafico1(base_url,selectmes);
+    });
+    $("#btnventas").click(function(){
+
+        $(".modal-header").css("background","#ff0000");
+        $(".modal-title").css("color","#ffffff");
+        $("#my-modal").modal("show");
+        datagrafico1(base_url,year);
+    });
+  });
   // metodo para sacar reportes tanto en excel y pdf
   $("#example").DataTable( {
         dom: "Bfrtip",
@@ -502,8 +515,7 @@ $(document).ready(function(){
     });
   }
   ///// GRAFICO MODAL
-function graficar1(meses,montos,year){
-    // Highcharts.chart('container-modal', {
+  function graficar1(meses,montos,year){
     Highcharts.chart('grafico', {
       chart: {
         type: 'column'
@@ -544,7 +556,73 @@ function graficar1(meses,montos,year){
       
       }]
      });   
-}
+  }
+    // Funcion para traerme el monto para el grafico de las ventas 
+    function datagrafico1(base_url,year,mes){
+    namesday = ["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
+    $.ajax({
+      url: base_url + "dashboard/getDatadia",
+      type: "POST",
+      data:{year:year,
+            mes:mes},
+      dataType:"json",
+      success:function(data){
+        var dia = new Array();
+        var montos = new Array();
+        $.each(data,function(key, value){
+          dia.push(namesday[value.dia -1]);
+          valor = Number(value.Monto);
+          montos.push(valor);
+        });
+        graficar(dia,montos,year,mes);
+      }
+    });
+  }
+   /// GRAFICO MODAL
+   function graficar(dia,montos,year,mes){
+    Highcharts.chart('container-modal', {
+    
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Monto acumulado por las ventas de los dias'
+      },
+      subtitle: {
+        text: 'Año '+year,
+        text: 'mes '+mes
+      },
+      xAxis: {
+        categories: dia,
+        crosshair: true
+      },
+      yAxis: {
+        min: 0,
+        title: {
+            text: 'Monto acumulado (bolivianos)'
+        }
+      },
+      tooltip: {
+          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.2f} Bs</b></td></tr>',
+          footerFormat: '</table>',
+          shared: true,
+          useHTML: true
+      },
+      plotOptions: {
+          column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+          }
+      },
+      series: [{
+          name: 'Monto',
+          data: montos
+      
+      }]
+     });   
+  }
 </script>
 </body>
 </html>

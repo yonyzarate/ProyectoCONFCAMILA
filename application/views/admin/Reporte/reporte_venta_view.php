@@ -12,24 +12,24 @@
             <div class="box-body"> 
            
             <div class="row mb-2">
-                    <form action="<?php echo current_url();?>" method="POST" class="form-horizontal">
+                    <form action="<?php echo current_url();?>" method="POST" class="form-horizontal"> 
                         <div class="form-group col-md-12">
-                        <div class="col-md-12" style="width: 1015px;">
-                         <div class="row mb-2">
-                            <label for="" class="col-md-1 control-label">Desde:</label>
-                            <div class="col-md-3">
-                                <input type="date" class="form-control" name="fechainicio"style="width: 176px;" value="<?php echo !empty($fechainicio) ? $fechainicio:'';?>">
-                            </div>
-                            <label for="" class="col-md-1 control-label">Hasta:</label>
-                            <div class="col-md-3">
-                                <input type="date" class="form-control" name="fechafin" style="width: 176px;" value="<?php  echo !empty($fechafin) ? $fechafin:'';?>">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
-                                <a href="<?php echo base_url(); ?>Reportes/ReporteVenta_controller/factura" class="btn btn-danger">Restablecer</a>
-                            </div>
+                            <div class="col-md-12" style="width: 1015px;">
+                                <div class="row mb-2">
+                                    <label for="" class="col-md-1 control-label">Desde:</label>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" name="fechainicio"style="width: 176px;" value="<?php echo !empty($fechainicio) ? $fechainicio:'';?>">
+                                </div>
+                                <label for="" class="col-md-1 control-label">Hasta:</label>
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" name="fechafin" style="width: 176px;" value="<?php  echo !empty($fechafin) ? $fechafin:'';?>">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="submit" name="buscar" value="Buscar" class="btn btn-primary">
+                                    <a href="<?php echo base_url(); ?>Reportes/ReporteVenta_controller/factura" class="btn btn-danger">Restablecer</a>
+                                </div>
                     
-                        </div>
+                            </div>
                         </div>
                         </div>
                     </form>

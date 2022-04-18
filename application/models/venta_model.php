@@ -102,6 +102,13 @@ class venta_model extends CI_Model {
         $resultados = $this->db->get();
         return $resultados->result(); 
     }
+    public function meses(){
+        $this->db->select("MONTH(Fecha) as mes");
+        $this->db->from("venta");
+        $this->db->group_by("mes");
+        $resultados = $this->db->get();
+        return $resultados->result(); 
+    }
     public function montos ($year){
         $this->db->select("MONTH(Fecha) as Mes, SUM(Total) as Monto");
         $this->db->from("venta");
@@ -110,6 +117,16 @@ class venta_model extends CI_Model {
         $this->db->group_by("Mes");
         $this->db->order_by("Mes");
         $resultados = $this->db->get();
-        return $resultados->result();
+        return $resultados->result(); 
+    }
+    public function montosmeses ($year, $mes){
+        $this->db->select("DAY(Fecha) as dia, SUM(Total) as Monto");
+        $this->db->from("venta");
+        $this->db->where("Fecha >=",$year.$mes."-01");
+        $this->db->where("Fecha <=",$year.$mes."-31");
+        $this->db->group_by("dia");
+        // $this->db->order_by("Mes");
+        $resultados = $this->db->get();
+        return $resultados->result(); 
     }
 }

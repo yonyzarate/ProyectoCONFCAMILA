@@ -18,7 +18,8 @@ class Dashboard extends CI_Controller {
 			"cantUsuarios" => $this->Backend_model->rowCount("usuario"),
 			"cantClientes" => $this->Backend_model->rowCount("cliente"),
             "cantProductos" => $this->Backend_model->rowCount("producto1"),
-            "years" => $this->venta_model->years()
+            "years" => $this->venta_model->years(),
+            "meses" => $this->venta_model->meses()
 		);
         $this->load->view('layouts/header'); 
         $this->load->view('layouts/aside');
@@ -28,6 +29,12 @@ class Dashboard extends CI_Controller {
     public function getData(){ 
 		$year = $this->input->post("year");
 		$resultados = $this->venta_model->montos($year);
-		echo json_encode($resultados);
+		echo json_encode($resultados); 
+	}
+    public function getDatadia(){ 
+		$year = $this->input->post("year");
+		$mes = $this->input->post("mes");
+		$resultados = $this->venta_model->montosmeses($year,$mes);
+		echo json_encode($resultados); 
 	}
 } 

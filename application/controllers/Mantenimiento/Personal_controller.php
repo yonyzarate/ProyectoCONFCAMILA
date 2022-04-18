@@ -30,7 +30,6 @@ class Personal_controller extends CI_Controller {
         $data = array(
             'profesion' =>$this->personal_model->getprofesion(),
             'rol' =>$this->personal_model->getroles(),
-            'sexo' =>$this->personal_model->getsexo(),
 		);
 		
 		$this->load->view('layouts/header');
@@ -141,7 +140,7 @@ class Personal_controller extends CI_Controller {
                 'CedulaIdentidad'=>$ci,
                 'FechaNacimiento'=>$fechanacimiento,
                 'FechaRegistro'=>$fecharegistro,
-                'IdSexo'=>$sexo,
+                'Sexo'=>$sexo,
                 'IdProfesion'=>$profesion,
                 'IdRol'=>$roles,
                 'Estado'=>"Activo",
@@ -163,7 +162,6 @@ class Personal_controller extends CI_Controller {
 		$data = array(
             'profesion' =>$this->personal_model->getprofesion(),
             'rol' =>$this->personal_model->getroles(),
-            'sexo' =>$this->personal_model->getsexo(),
             'personal'=>$this->personal_model->new_personal($IdPersonal)
 		);
 		$this->load->view('layouts/header');
@@ -283,7 +281,7 @@ class Personal_controller extends CI_Controller {
                'CedulaIdentidad'=>$ci,
                'FechaNacimiento'=>$fechanacimiento,
                'FechaRegistro'=>$fecharegistro,
-               'IdSexo'=>$sexo,
+               'Sexo'=>$sexo,
                'IdProfesion'=>$profesion,
                'IdRol'=>$roles,
             

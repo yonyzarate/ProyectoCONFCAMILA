@@ -23,7 +23,7 @@
                              </div>
                         <?php endif;?>
                         <form action="<?php echo base_url();?>Administrador/Permisos_controller/store" method="POST">
-                                                       
+ 
                             <div class="form-group">
                                 <label for="rol">Roles:</label>
                                 <select name="rol" id="rol" class="form-control">

@@ -79,14 +79,14 @@
                 <div class="row">
                     <div class="col-md-12"> 
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-8">
                                 <h3 class="box-title">Grafico estadistico</h3>
                             </div>
-                            <!-- <div class="col-md-2 text-center">
+                            <div class="col-md-2 text-center">
                                 <div class="btm-group" role="group" aria-label="grupo de botones" lang="es">
-                                    <button role="button" id="btnventas" class="btn btn-primary">Grafico de ventas</button>
+                                    <button role="button" id="btnventas" class="btn btn-primary">Ventas Diarias</button>
                                 </div>
-                            </div> -->
+                            </div>
                             
                             <div class="col-md-2">
                                     <select name="year" id="year" class="form-control">
@@ -97,7 +97,7 @@
                             </div>
                             <!-- /.box-header -->
                             
-                            <!-- ./box-body -->
+                            <!-- ./box-body --> 
                         </div>
                         <!-- /.box -->
                     </div>
@@ -128,15 +128,33 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-12">
-                        <div class="col-md-2">
-                                    <select name="year1" id="year1" class="form-control">
+                        
+                                <div class="col-md-2">
+                                    <select name="year" id="year1" class="form-control">
                                         <?php foreach($years as $year):?>
                                             <option value="<?php echo $year->year;?>"><?php echo $year->year;?></option>
                                         <?php endforeach;?>
                                     </select>
                                 </div>
-                        </div>
+                                <div class="col-md-2">
+                                    <select name="mes" id="mes" class="form-control">
+                                        
+                                    <option value="01">Enero</option> 
+                                    <option value="02">Febrero</option> 
+                                    <option value="03">Marzo</option> 
+                                    <option value="04">Abril</option> 
+                                    <option value="05">Mayo</option> 
+                                    <option value="06">Junio</option> 
+                                    <option value="07">Julio</option> 
+                                    <option value="08">Agosto</option> 
+                                    <option value="09">Septiembre</option> 
+                                    <option value="10">Octubre</option> 
+                                    <option value="11">Noviembre</option> 
+                                    <option value="12">Diciembre</option>
+                                        
+                                    </select>
+                                </div>
+                        
                     </div>
                     <div id="container-modal" style="min-width: 320px; height: 400px; margin: 0 auto;"> </div>
                 </div>

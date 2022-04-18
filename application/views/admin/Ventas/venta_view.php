@@ -17,7 +17,7 @@
 
  <div class="col-xs-12" style="width: 781px;">
  <div class="row mb-2"> 
-	<div class="col-xs-6">	
+	<div class="col-xs-6">	 
 		<b>CLIENTE</b><br>
 		<b>Nombre:</b> <?php echo $ventas->Nombre; ?> <br>
 		<b>Nit:</b> <?php echo $ventas->Nit; ?><br>
