@@ -38,7 +38,7 @@ class venta_model extends CI_Model {
 			return false;
 		}
     }
-
+ 
     public function getventas($idventa){
         $this->db->select("ve.IdVenta, ve.Fecha, ve.SubTotal, ve.Iva, ve.Descuento, ve.Total, ve.NroVenta, ve.NroComprobante,
         cl.Nombre, cl.Nit,cl.Telefono,cl.Direccion, 

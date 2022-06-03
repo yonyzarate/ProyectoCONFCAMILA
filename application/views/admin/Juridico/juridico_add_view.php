@@ -50,7 +50,8 @@
                                 <div class="row mb-2">
                                     <div class="form-group col-md-4" >
                                         <label for="nombre"> Dirección:</label>
-                                        <input type="text" class="form-control" id="direccion" name="direccion">
+                                        <input type="text" class="form-control" id="direccion" name="direccion"
+                                        value="<?php echo set_value("direccion"); ?>">
                                     </div>
                                     <div class="col-md-1"style="padding-left: 0px; width: 7.5px; padding-right: 0px; right: 5px;top: 30px;color: #ff0505;">
                                          <sup><h4></h4></sup>

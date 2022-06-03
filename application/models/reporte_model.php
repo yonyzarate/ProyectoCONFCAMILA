@@ -27,7 +27,7 @@ class reporte_model extends CI_Model {
 
     public function getVentasbyDatefactura($fechainicio,$fechafin){
         $this->db->select("ve.*, cl.Nombre, 
-        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante, SUM(ve.Total) AS VentaTotal");
+        CONCAT(pe.Nombre,' ',pe.ApellidoPaterno,' ',pe.ApellidoMaterno) AS Personal, tc.Nombre AS Comprobante");
         $this->db->from("venta ve");
         $this->db->join("cliente cl","cl.IdCliente=ve.IdCliente");
         $this->db->join("personal pe","pe.IdPersonal=ve.IdPersonal");

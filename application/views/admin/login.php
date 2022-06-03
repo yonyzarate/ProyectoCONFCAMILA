@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sistema CONFCAMILA</title> 
+    <link rel="shortcut icon" href="<?php echo base_url( ). "assets/"; ?>icono/logocentral1.ico">
   </head>
   <body>
     <div class="col-md-4">
