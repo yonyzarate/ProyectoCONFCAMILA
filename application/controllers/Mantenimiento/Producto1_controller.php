@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use chriskacerguis\RestServer\RestController;
 class Producto1_controller extends CI_Controller {
 
     private $permisos;
@@ -46,12 +47,7 @@ class Producto1_controller extends CI_Controller {
         $this->load->view('layouts/footer');
 		
     }
-    //controlador para traer datos de subcategoria atravez de ajax
-    public function fetchSubcategoria(){
-        if($this->input->post('IdCategoria')){
-            echo $this->producto1_model->fetch_subcategoria($this->input->post('IdCategoria'));
-        }
-    } 
+   
    // controlador para 
     public function store(){
         $nombre = $this->input->post("nombre");

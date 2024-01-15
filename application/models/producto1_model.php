@@ -22,17 +22,7 @@ class producto1_model extends CI_Model {
         $resultado = $this->db->get();
         return $resultado->result();
     }
-    public function fetch_subcategoria($IdCategoria){
-        $this->db->where("IdCategoria",$IdCategoria);
-        $this->db->order_by("Nombre","ASC");
-        $resultado = $this->db->get("subcategoria");
-
-        $option ='<option value="">Select Subcategoria</option>';
-        foreach ($resultado->result() as $row) {
-            $option .='<option value="'.$row->IdSubcategoria.'">'.$row->Nombre.' </option>'; 
-        }
-        return $option;
-    }
+    // 
     // consulta que inserta a la base datos el nuevo
     public function save($data){ 
         return $this->db->insert("producto1",$data);
